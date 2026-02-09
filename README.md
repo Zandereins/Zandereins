@@ -7,6 +7,7 @@ I help businesses leverage Microsoft 365 and cloud infrastructure — and I'm bu
 ## What I'm working on
 
 - 🦞 **Vega** — My personal AI assistant built on [OpenClaw](https://github.com/openclaw/openclaw), running on a hardened VPS with Tailscale mesh networking
+- 🛡️ **ShieldClaw** — Prompt injection defense skill for OpenClaw agents (detection, prevention & awareness)
 - 🔧 **OpenClaw Skills** — Developing and publishing reusable agent skills for the OpenClaw ecosystem
 - 📋 **Workspace Blueprints** — Documenting best practices for deploying secure, token-optimized AI agents
 
@@ -25,8 +26,8 @@ I help businesses leverage Microsoft 365 and cloud infrastructure — and I'm bu
 
 | Repo | Description |
 |------|-------------|
+| 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for OpenClaw agents |
 | 🔒 [openclaw-workspace](https://github.com/Zandereins/openclaw-workspace) | Agent workspace backup (private) |
-| *More coming soon* | OpenClaw skills, blueprints & tools |
 
 ## Background
 
