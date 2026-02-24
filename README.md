@@ -6,7 +6,7 @@ I help businesses leverage Microsoft 365 and cloud infrastructure — and I'm bu
 
 ## What I'm working on
 
-- 🦞 **Vega** — My personal AI assistant built on [OpenClaw](https://github.com/openclaw/openclaw), running on a hardened VPS with Tailscale mesh networking
+- 🦞 **Vega** — My personal AI assistant built on [OpenClaw](https://github.com/openclaw/openclaw) — runs on a Tailscale-isolated VPS with semantic memory (QMD vsearch), multi-LLM routing (Grok primary / Claude fallback via OpenRouter), and voice input via Whisper
 - 🖥️ **Mission-Control** — Web-based command center for my VPS: Kanban board, live Vega status, task delegation, server monitoring, and GSD workflow visibility — all in one dark-mode tab
 - 🛡️ **ShieldClaw** — Prompt injection defense skill for OpenClaw agents (detection, prevention & awareness)
 - 🔧 **OpenClaw Skills** — Developing and publishing reusable agent skills for the OpenClaw ecosystem
@@ -15,7 +15,7 @@ I help businesses leverage Microsoft 365 and cloud infrastructure — and I'm bu
 ## Tech Stack
 
 ![OpenClaw](https://img.shields.io/badge/OpenClaw-Agent_Framework-FF6B35?style=flat-square&logo=lobster)
-![Next.js](https://img.shields.io/badge/Next.js_15-App_Router-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js_16-App_Router-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_v4-CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-Components-000000?style=flat-square&logo=shadcnui&logoColor=white)
@@ -23,8 +23,12 @@ I help businesses leverage Microsoft 365 and cloud infrastructure — and I'm bu
 ![Tailscale](https://img.shields.io/badge/Tailscale-Mesh_VPN-000000?style=flat-square&logo=tailscale&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04_LTS-E95420?style=flat-square&logo=ubuntu&logoColor=white)
 ![Hetzner](https://img.shields.io/badge/Hetzner-Cloud_VPS-D50C2D?style=flat-square&logo=hetzner&logoColor=white)
-![Microsoft 365](https://img.shields.io/badge/Microsoft_365-Consulting-D83B01?style=flat-square&logo=microsoft&logoColor=white)
+![OpenRouter](https://img.shields.io/badge/OpenRouter-Multi--LLM_Gateway-6467F2?style=flat-square)
+![Whisper](https://img.shields.io/badge/Whisper-Voice_STT-412991?style=flat-square&logo=openai&logoColor=white)
+![QMD](https://img.shields.io/badge/QMD-Semantic_Memory-7C3AED?style=flat-square)
+![Telegram](https://img.shields.io/badge/Telegram-Bot_Interface-26A5E4?style=flat-square&logo=telegram&logoColor=white)
 ![n8n](https://img.shields.io/badge/n8n-Workflow_Automation-EA4B71?style=flat-square&logo=n8n&logoColor=white)
+![Microsoft 365](https://img.shields.io/badge/Microsoft_365-Consulting-D83B01?style=flat-square&logo=microsoft&logoColor=white)
 
 ## Featured Repos
 
