@@ -48,6 +48,7 @@ Context is the foundation of reliable AI agents. My approach:
 |------|------|
 | **Ghostty** | Custom-configured terminal with splitscreen layout |
 | **lazygit** | TUI Git client — keyboard-driven version control |
+| **Wispr Flow** | Voice-to-text AI — speak commands, code and prompts |
 | **Claude Code** | Agentic IDE running in the adjacent pane |
 | **Git Worktrees** | Parallel branch development without context switching *(adopting)* |
 
@@ -70,6 +71,7 @@ Context is the foundation of reliable AI agents. My approach:
 ![Ghostty](https://img.shields.io/badge/Ghostty-Terminal-1C1E26?style=flat-square&logo=ghostty&logoColor=white)
 ![lazygit](https://img.shields.io/badge/lazygit-Git_TUI-F05032?style=flat-square&logo=git&logoColor=white)
 ![Git Worktrees](https://img.shields.io/badge/Git_Worktrees-Parallel_Dev-F05032?style=flat-square&logo=git&logoColor=white)
+![Wispr Flow](https://img.shields.io/badge/Wispr_Flow-Voice--to--Text-6C5CE7?style=flat-square)
 ![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_IDE-CC785C?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
