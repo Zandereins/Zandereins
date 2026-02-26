@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  Building secure, autonomous AI agents with structured workflows and deep context engineering.
+  Terminal-first AI engineering — autonomous agents, structured workflows, deep context.
 </p>
 
 ---
@@ -42,6 +42,15 @@ Context is the foundation of reliable AI agents. My approach:
 - **Semantic memory (QMD vsearch)** — Vector search over agent history with automatic re-embedding (gemma-300M)
 - **Token budgeting** — Aggressive pruning: short SKILL.md, scoped rules, targeted context injection per task
 
+## Dev Environment
+
+| Tool | Role |
+|------|------|
+| **Ghostty** | Custom-configured terminal with splitscreen layout |
+| **lazygit** | TUI Git client — keyboard-driven version control |
+| **Claude Code** | Agentic IDE running in the adjacent pane |
+| **Git Worktrees** | Parallel branch development without context switching *(adopting)* |
+
 ## Tech Stack
 
 ### Infrastructure & Deployment
@@ -57,7 +66,10 @@ Context is the foundation of reliable AI agents. My approach:
 ![Whisper](https://img.shields.io/badge/Whisper-Voice_STT-412991?style=flat-square&logo=openai&logoColor=white)
 ![Telegram](https://img.shields.io/badge/Telegram-Bot_Interface-26A5E4?style=flat-square&logo=telegram&logoColor=white)
 
-### Dev Stack
+### Dev Environment
+![Ghostty](https://img.shields.io/badge/Ghostty-Terminal-1C1E26?style=flat-square&logo=ghostty&logoColor=white)
+![lazygit](https://img.shields.io/badge/lazygit-Git_TUI-F05032?style=flat-square&logo=git&logoColor=white)
+![Git Worktrees](https://img.shields.io/badge/Git_Worktrees-Parallel_Dev-F05032?style=flat-square&logo=git&logoColor=white)
 ![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_IDE-CC785C?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
