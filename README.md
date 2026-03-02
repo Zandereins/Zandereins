@@ -49,7 +49,32 @@ Structured workflows ensure AI-driven development produces reliable, auditable r
 | **lazygit** | TUI Git client — keyboard-driven version control |
 | **Wispr Flow** | Voice-to-text AI — speak commands, code and prompts |
 | **Claude Code** | Agentic IDE running in the adjacent pane |
-| **Git Worktrees** | Parallel branch development without context switching *(adopting)* |
+| **Git Worktrees** | Parallel branch development without context switching |
+
+## Claude Code Ecosystem
+
+My agentic development workflow runs on Claude Code with a curated set of plugins, frameworks, and custom skills — from structured planning to autonomous code review and security enforcement.
+
+### Official Plugins
+![Superpowers](https://img.shields.io/badge/Superpowers-Parallel_Agents-CC785C?style=flat-square)
+![Frontend Design](https://img.shields.io/badge/Frontend_Design-UI_Generation-CC785C?style=flat-square)
+![Playwright](https://img.shields.io/badge/Playwright-Browser_Automation-CC785C?style=flat-square)
+![Code Review](https://img.shields.io/badge/Code_Review-Multi--Agent_PR-CC785C?style=flat-square)
+![Commit Commands](https://img.shields.io/badge/Commit_Commands-Git_Workflow-CC785C?style=flat-square)
+![Ralph Loop](https://img.shields.io/badge/Ralph_Loop-Autonomous_Iteration-CC785C?style=flat-square)
+![Playground](https://img.shields.io/badge/Playground-Interactive_HTML-CC785C?style=flat-square)
+![Agent SDK Dev](https://img.shields.io/badge/Agent_SDK_Dev-SDK_Scaffolding-CC785C?style=flat-square)
+
+### Community Frameworks
+![GSD](https://img.shields.io/badge/GSD-Task--Driven_Dev-2563EB?style=flat-square)
+![Paul](https://img.shields.io/badge/Paul-Dev_Methodology-2563EB?style=flat-square)
+![Everything Claude Code](https://img.shields.io/badge/Everything_Claude_Code-Full_System-2563EB?style=flat-square)
+![Planning with Files](https://img.shields.io/badge/Planning_with_Files-Manus--Style-2563EB?style=flat-square)
+![Voltagent](https://img.shields.io/badge/Voltagent-Subagent_Toolkit-2563EB?style=flat-square)
+
+### Custom Skills
+![ShieldClaw](https://img.shields.io/badge/ShieldClaw-Prompt_Injection_Defense-DC2626?style=flat-square)
+![QMD-CLI](https://img.shields.io/badge/QMD--CLI-Semantic_Memory_Search-7C3AED?style=flat-square)
 
 ## Tech Stack
 
@@ -75,7 +100,6 @@ Structured workflows ensure AI-driven development produces reliable, auditable r
 ![lazygit](https://img.shields.io/badge/lazygit-Git_TUI-F05032?style=flat-square&logo=git&logoColor=white)
 ![Git Worktrees](https://img.shields.io/badge/Git_Worktrees-Parallel_Dev-F05032?style=flat-square&logo=git&logoColor=white)
 ![Wispr Flow](https://img.shields.io/badge/Wispr_Flow-Voice--to--Text-6C5CE7?style=flat-square)
-![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_IDE-CC785C?style=flat-square)
 
 ### Infrastructure & Deployment
 ![Docker](https://img.shields.io/badge/Docker-Container-2496ED?style=flat-square&logo=docker&logoColor=white)
