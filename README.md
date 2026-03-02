@@ -104,4 +104,4 @@ Today I focus on AI agents and agentic systems. I build agents that run unattend
 
 **Available for freelance and consulting projects** in AI agent development, fullstack web applications, and automation.
 
-📧 [YOUR-EMAIL] · 🔗 [YOUR-LINKEDIN]
+🔗 [LinkedIn](https://www.linkedin.com/in/franz-paul-016938258/)
