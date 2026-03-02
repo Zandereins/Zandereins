@@ -2,45 +2,44 @@
   <img src="claude-jumping.svg" alt="Claude Code mascot jumping" width="120" height="100">
 </p>
 
-<h1 align="center">Hey, I'm Franz 👋</h1>
+<h1 align="center">Hey, I'm Franz</h1>
 
 <p align="center">
   <strong>IT Consultant</strong> · <strong>AI & Agentic Engineering</strong> · Dresden, Germany
 </p>
 
 <p align="center">
-  Terminal-first AI engineering — autonomous agents, structured workflows, deep context.
+  I build AI agents that run in production — not just prototypes.<br>
+  From LLM orchestration and fullstack web apps to secure infrastructure, with an enterprise IT background.
 </p>
 
 ---
 
+## What I Deliver
+
+- **AI agents in production** — Design, build, and operate autonomous agents with semantic memory, multi-LLM routing, and real-time monitoring
+- **Fullstack web applications** — Next.js / React / TypeScript frontend, Python / FastAPI backend, Supabase / PostgreSQL data layer
+- **AI workflow architecture** — Context engineering, prompt design, and structured agentic workflows that deliver reproducible results
+- **Automation & orchestration** — n8n workflows, Docker deployments, CI/CD pipelines, infrastructure as code
+- **Enterprise governance** — Security-first architecture and operational discipline from years of Microsoft Cloud consulting
+
 ## What I'm Building
 
-- 🦞 **Vega** — My personal AI assistant built on [OpenClaw](https://github.com/openclaw/openclaw) — runs on a Tailscale-isolated VPS with semantic memory (QMD vsearch), multi-LLM routing (Grok primary / Claude fallback via OpenRouter), and voice input via Whisper
-- 🖥️ **Mission-Control** — Web-based command center for my VPS: Kanban board, live Vega status, task delegation, server monitoring, and GSD workflow visibility — all in one dark-mode tab
-- 🛡️ **ShieldClaw** — Prompt injection defense skill for OpenClaw agents (detection, prevention & awareness)
-- 🔧 **OpenClaw Skills** — Developing and publishing reusable agent skills for the OpenClaw ecosystem
-- 📋 **Workspace Blueprints** — Documenting best practices for deploying secure, token-optimized AI agents
+- 🦞 **Vega** — AI assistant on [OpenClaw](https://github.com/openclaw/openclaw) running 24/7 on a Tailscale-isolated VPS — handles research, task delegation, automated security audits, and daily operations via Telegram
+- 🖥️ **Mission-Control** — Operations dashboard that gives full visibility into agent state, task pipelines, server health, and deployment status — one tab instead of five terminals
+- 🛡️ **ShieldClaw** — Open-source prompt injection defense (71 patterns, 4 active hooks, zero token overhead) that protects AI agents from adversarial inputs in production
+- 🔧 **OpenClaw Skills** — Reusable agent capabilities for the OpenClaw ecosystem
 
-## Claude Code Workflows
+## Engineering Approach
 
-I run structured agentic workflows on top of [Claude Code](https://claude.ai/claude-code):
+Structured workflows ensure AI-driven development produces reliable, auditable results — not guesswork.
 
-| Workflow | Purpose |
-|----------|---------|
-| **GSD** — *Get Shit Done* | Phase-based planning & execution with atomic commits and wave-parallelized subagents |
-| **PAUL** — *Planning & Unified Lifecycle* | Project milestone management, phase planning, and UAT-driven delivery |
-| **Ralph Loop** | Automated test-review-fix cycle for continuous quality assurance |
-
-## Context Engineering
-
-Context is the foundation of reliable AI agents. My approach:
-
-- **Layered CLAUDE.md architecture** — Token-optimized instruction files scoped per project, directory, and agent
-- **Skills with progressive disclosure** — Capabilities loaded on-demand, not burned into every prompt
-- **Hook-based automation** — PreToolUse/PostToolUse hooks for zero-token-overhead guardrails and enforcement
-- **Semantic memory (QMD vsearch)** — Vector search over agent history with automatic re-embedding (gemma-300M)
-- **Token budgeting** — Aggressive pruning: short SKILL.md, scoped rules, targeted context injection per task
+| Practice | What it means |
+|----------|---------------|
+| **Phase-based execution** | Planning, implementation, verification with atomic commits and parallel subagents |
+| **Context engineering** | Token-optimized instruction files, progressive skill loading, scoped rules per project |
+| **Hook-based guardrails** | Security enforcement at zero token cost via PreToolUse/PostToolUse hooks |
+| **Semantic memory** | Vector search over agent history with automatic re-embedding for persistent context |
 
 ## Dev Environment
 
@@ -54,12 +53,6 @@ Context is the foundation of reliable AI agents. My approach:
 
 ## Tech Stack
 
-### Infrastructure & Deployment
-![Docker](https://img.shields.io/badge/Docker-Container-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Tailscale](https://img.shields.io/badge/Tailscale-Mesh_VPN-000000?style=flat-square&logo=tailscale&logoColor=white)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04_LTS-E95420?style=flat-square&logo=ubuntu&logoColor=white)
-![Hetzner](https://img.shields.io/badge/Hetzner-Cloud_VPS-D50C2D?style=flat-square&logo=hetzner&logoColor=white)
-
 ### AI & Agents
 ![OpenClaw](https://img.shields.io/badge/OpenClaw-Agent_Framework-FF6B35?style=flat-square)
 ![OpenRouter](https://img.shields.io/badge/OpenRouter-Multi--LLM_Gateway-6467F2?style=flat-square)
@@ -67,23 +60,28 @@ Context is the foundation of reliable AI agents. My approach:
 ![Whisper](https://img.shields.io/badge/Whisper-Voice_STT-412991?style=flat-square&logo=openai&logoColor=white)
 ![Telegram](https://img.shields.io/badge/Telegram-Bot_Interface-26A5E4?style=flat-square&logo=telegram&logoColor=white)
 
+### Dev Stack
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-App_Router-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_v4-CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-Components-000000?style=flat-square&logo=shadcnui&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+
 ### Dev Environment
 ![Ghostty](https://img.shields.io/badge/Ghostty-Terminal-1C1E26?style=flat-square&logo=ghostty&logoColor=white)
 ![lazygit](https://img.shields.io/badge/lazygit-Git_TUI-F05032?style=flat-square&logo=git&logoColor=white)
 ![Git Worktrees](https://img.shields.io/badge/Git_Worktrees-Parallel_Dev-F05032?style=flat-square&logo=git&logoColor=white)
 ![Wispr Flow](https://img.shields.io/badge/Wispr_Flow-Voice--to--Text-6C5CE7?style=flat-square)
 ![Claude Code](https://img.shields.io/badge/Claude_Code-Agentic_IDE-CC785C?style=flat-square)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-App_Router-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_v4-CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-Components-000000?style=flat-square&logo=shadcnui&logoColor=white)
 
-### Claude Code Ecosystem
-![GSD](https://img.shields.io/badge/GSD-Phase_Execution-E07C4C?style=flat-square)
-![PAUL](https://img.shields.io/badge/PAUL-Lifecycle_Mgmt-7C3AED?style=flat-square)
-![Ralph Loop](https://img.shields.io/badge/Ralph_Loop-QA_Automation-22C55E?style=flat-square)
-![Context Engineering](https://img.shields.io/badge/Context_Engineering-Token_Optimized-1a1a2e?style=flat-square)
+### Infrastructure & Deployment
+![Docker](https://img.shields.io/badge/Docker-Container-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Tailscale](https://img.shields.io/badge/Tailscale-Mesh_VPN-000000?style=flat-square&logo=tailscale&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04_LTS-E95420?style=flat-square&logo=ubuntu&logoColor=white)
+![Hetzner](https://img.shields.io/badge/Hetzner-Cloud_VPS-D50C2D?style=flat-square&logo=hetzner&logoColor=white)
 
 ### Tools & Integrations
 ![Microsoft 365](https://img.shields.io/badge/Microsoft_365-Consulting-D83B01?style=flat-square&logo=microsoft&logoColor=white)
@@ -93,13 +91,17 @@ Context is the foundation of reliable AI agents. My approach:
 
 | Repo | Description |
 |------|-------------|
-| 🖥️ [openclaw-mission-control](https://github.com/Zandereins/openclaw-mission-control) | Command center for the OpenClaw VPS — Kanban, Vega status, task delegation, monitoring, GSD Viewer |
-| 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense skill for OpenClaw agents |
+| 🖥️ [openclaw-mission-control](https://github.com/Zandereins/openclaw-mission-control) | Operations dashboard for AI agent infrastructure — Kanban, live status, task delegation, monitoring |
+| 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 patterns, 133 tests, MIT licensed |
 
 ## Background
 
-With years of experience in Microsoft Cloud consulting, I bring an enterprise mindset to the AI agent space — focusing on security-first architecture, reproducible deployments, and practical automation that solves real business problems.
+I spent years in Microsoft Cloud consulting — deploying M365 environments, managing tenant security, and building automation for enterprise clients. That experience shapes how I approach AI engineering: production-grade infrastructure, security by default, and operational discipline over hype.
+
+Today I focus on AI agents and agentic systems. I build agents that run unattended in production, not demos that break after the first edge case. The enterprise mindset is the differentiator — I think in terms of uptime, audit trails, and access control, not just prompt quality.
 
 ---
 
-*Building the future of autonomous AI assistants, one commit at a time.* 🚀
+**Available for freelance and consulting projects** in AI agent development, fullstack web applications, and automation.
+
+📧 [YOUR-EMAIL] · 🔗 [YOUR-LINKEDIN]
