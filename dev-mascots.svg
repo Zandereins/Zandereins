@@ -177,25 +177,50 @@
 
       Path traces clockwise from top-left of dome row 1.
     -->
-    <path class="ghostty-tentacles" d="
+    <!--
+      Path trace (clockwise from top-left of dome row 1):
+
+      TOP: (152,16) -> right 24 to (176,16)
+      RIGHT DOME STEPS (outward, each +4px right):
+        (176,16) -> down 4 -> right 4 -> (180,20)
+        (180,20) -> down 4 -> right 4 -> (184,24)
+        (184,24) -> down 4 -> right 4 -> (188,28)
+        (188,28) -> down 4 -> right 4 -> (192,32)
+      RIGHT BODY: (192,32) -> down 32 -> (192,64)
+      TENTACLES (right to left: long-short-long-short):
+        T4 (184..192, h=16): down 16 -> left 8 -> up 16 -> (184,64)
+        Gap: left 4 -> (180,64)
+        T3 (168..180, h=10): down 10 -> left 12 -> up 10 -> (168,64)
+        Gap: left 4 -> (164,64)
+        T2 (152..164, h=16): down 16 -> left 12 -> up 16 -> (152,64)
+        Gap: left 4 -> (148,64)
+        T1 (136..148, h=10): down 10 -> left 12 -> up 10 -> (136,64)
+      LEFT BODY: (136,64) -> up 32 -> (136,32)
+      LEFT DOME STEPS (inward, each +4px right then up):
+        (136,32) -> right 4 -> up 4 -> (140,28)
+        (140,28) -> right 4 -> up 4 -> (144,24)
+        (144,24) -> right 4 -> up 4 -> (148,20)
+        (148,20) -> right 4 -> up 4 -> (152,16)  = start
+    -->
+    <path d="
       M152,16 h24
       v4 h4
       v4 h4
       v4 h4
       v4 h4
       v32
-      v10 h-4 v-10
+      v16 h-8 v-16
       h-4
-      v16 h-12
-      v-16 h-4
-      v10 h-12
-      v-10 h-4
-      v16 h-12
-      v-16
+      v10 h-12 v-10
+      h-4
+      v16 h-12 v-16
+      h-4
+      v10 h-12 v-10
       v-32
-      h-4 v-4
-      h-4 v-4
-      h-4 v-4
+      h4 v-4
+      h4 v-4
+      h4 v-4
+      h4 v-4
       Z"
       fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
