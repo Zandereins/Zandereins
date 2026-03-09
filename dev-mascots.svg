@@ -29,11 +29,11 @@
 
     /* === Ghostty Animations === */
     @keyframes ghost-float {
-      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
-      20% { transform: translateY(-10px) scaleY(1.05) scaleX(0.98); }
-      40% { transform: translateY(-16px) scaleY(1.03) scaleX(0.99); }
-      60% { transform: translateY(-15px) scaleY(1.02) scaleX(1.0); }
-      80% { transform: translateY(-4px) scaleY(0.97) scaleX(1.02); }
+      0%, 100% { transform: rotate(6deg) translateY(0) scaleY(1) scaleX(1); }
+      20% { transform: rotate(6deg) translateY(-10px) scaleY(1.05) scaleX(0.98); }
+      40% { transform: rotate(6deg) translateY(-16px) scaleY(1.03) scaleX(0.99); }
+      60% { transform: rotate(6deg) translateY(-15px) scaleY(1.02) scaleX(1.0); }
+      80% { transform: rotate(6deg) translateY(-4px) scaleY(0.97) scaleX(1.02); }
     }
     @keyframes ghost-wobble {
       0%, 100% { transform: translateX(0); }
@@ -44,10 +44,6 @@
       0%, 49% { opacity: 1; }
       50%, 99% { opacity: 0; }
       100% { opacity: 1; }
-    }
-    @keyframes ghost-blink {
-      0%, 42%, 48%, 100% { transform: scaleY(1); }
-      45% { transform: scaleY(0.1); }
     }
 
     /* === Claude Body === */
@@ -91,10 +87,6 @@
     }
     .terminal-cursor {
       animation: blink-cursor 1s linear infinite;
-    }
-    .ghostty-eye {
-      animation: ghost-blink 3s linear infinite;
-      transform-origin: center center;
     }
   </style>
 
@@ -224,10 +216,14 @@
       Z"
       fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
-    <!-- Left eye -->
-    <rect class="ghostty-eye" x="148" y="36" width="8" height="12" fill="#000000"/>
-    <!-- Right eye -->
-    <rect class="ghostty-eye" x="176" y="36" width="8" height="12" fill="#000000"/>
+    <!-- Left eye (diagonal stroke like original) -->
+    <rect x="148" y="36" width="4" height="4" fill="#000000"/>
+    <rect x="152" y="40" width="4" height="4" fill="#000000"/>
+    <rect x="156" y="44" width="4" height="4" fill="#000000"/>
+    <!-- Right eye (diagonal stroke like original) -->
+    <rect x="172" y="36" width="4" height="4" fill="#000000"/>
+    <rect x="176" y="40" width="4" height="4" fill="#000000"/>
+    <rect x="180" y="44" width="4" height="4" fill="#000000"/>
     <!--
       FIX: Terminal prompt > replaces plain mouth line.
       Pixel-art chevron gives the ghost a terminal-themed mouth
@@ -238,8 +234,5 @@
     <rect x="156" y="58" width="4" height="4" fill="#000000"/>
     <!-- Blinking underscore cursor beside prompt -->
     <rect class="terminal-cursor" x="168" y="58" width="8" height="4" fill="#000000"/>
-    <!-- Blush marks -->
-    <rect x="140" y="48" width="4" height="4" fill="#FFBABA" opacity="0.7"/>
-    <rect x="184" y="48" width="4" height="4" fill="#FFBABA" opacity="0.7"/>
   </g>
 </svg>
