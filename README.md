@@ -20,12 +20,13 @@
 - **AI agents in production** — Design, build, and operate autonomous agents with semantic memory, multi-LLM routing, and real-time monitoring
 - **Fullstack web applications** — Next.js / React / TypeScript frontend, Python / FastAPI backend, Supabase / PostgreSQL data layer
 - **AI workflow architecture** — Context engineering, prompt design, and structured agentic workflows that deliver reproducible results
-- **Automation & orchestration** — n8n workflows, Docker deployments, CI/CD pipelines, infrastructure as code
+- **Automation & data pipelines** — Web scraping, NLP preprocessing, n8n workflows, Docker deployments, CI/CD pipelines
 - **Enterprise governance** — Security-first architecture and operational discipline from years of Microsoft Cloud consulting
 
 ## What I'm Building
 
 - 🦞 **Vega** — AI assistant on [OpenClaw](https://github.com/openclaw/openclaw) running 24/7 on a Tailscale-isolated VPS — handles research, task delegation, automated security audits, and daily operations via Telegram
+- 📡 **project-beat** — Automated freelance project discovery for the German IT market — scrapes 5 platforms 2x daily, deduplicates via fuzzy + embedding similarity, ranks with hybrid NLP/semantic scoring (v1.2 live)
 - 🖥️ **Mission-Control** — Operations dashboard that gives full visibility into agent state, task pipelines, server health, and deployment status — one tab instead of five terminals
 - 🛡️ **ShieldClaw** — Open-source prompt injection defense (71 patterns, 4 active hooks, zero token overhead) that protects AI agents from adversarial inputs in production
 - 🔧 **OpenClaw Skills** — Reusable agent capabilities for the OpenClaw ecosystem
@@ -51,11 +52,14 @@ Structured workflows ensure AI-driven development produces reliable, auditable r
 | **Claude Code** | Agentic IDE running in the adjacent pane |
 | **Git Worktrees** | Parallel branch development without context switching |
 
-## Claude Code Ecosystem
+<details>
+<summary><strong>Claude Code Ecosystem</strong></summary>
+<br>
 
 My agentic development workflow runs on Claude Code with a curated set of plugins, frameworks, and custom skills — from structured planning to autonomous code review and security enforcement.
 
-### Official Plugins
+**Official Plugins**
+
 ![Superpowers](https://img.shields.io/badge/Superpowers-Parallel_Agents-CC785C?style=flat-square)
 ![Frontend Design](https://img.shields.io/badge/Frontend_Design-UI_Generation-CC785C?style=flat-square)
 ![Playwright](https://img.shields.io/badge/Playwright-Browser_Automation-CC785C?style=flat-square)
@@ -65,16 +69,20 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 ![Playground](https://img.shields.io/badge/Playground-Interactive_HTML-CC785C?style=flat-square)
 ![Agent SDK Dev](https://img.shields.io/badge/Agent_SDK_Dev-SDK_Scaffolding-CC785C?style=flat-square)
 
-### Community Frameworks
+**Community Frameworks**
+
 ![GSD](https://img.shields.io/badge/GSD-Task--Driven_Dev-2563EB?style=flat-square)
 ![Paul](https://img.shields.io/badge/Paul-Dev_Methodology-2563EB?style=flat-square)
 ![Everything Claude Code](https://img.shields.io/badge/Everything_Claude_Code-Full_System-2563EB?style=flat-square)
 ![Planning with Files](https://img.shields.io/badge/Planning_with_Files-Manus--Style-2563EB?style=flat-square)
 ![Voltagent](https://img.shields.io/badge/Voltagent-Subagent_Toolkit-2563EB?style=flat-square)
 
-### Custom Skills
+**Custom Skills**
+
 ![ShieldClaw](https://img.shields.io/badge/ShieldClaw-Prompt_Injection_Defense-DC2626?style=flat-square)
 ![QMD-CLI](https://img.shields.io/badge/QMD--CLI-Semantic_Memory_Search-7C3AED?style=flat-square)
+
+</details>
 
 ## Tech Stack
 
@@ -84,6 +92,9 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 ![QMD](https://img.shields.io/badge/QMD-Semantic_Memory-7C3AED?style=flat-square)
 ![Whisper](https://img.shields.io/badge/Whisper-Voice_STT-412991?style=flat-square&logo=openai&logoColor=white)
 ![Telegram](https://img.shields.io/badge/Telegram-Bot_Interface-26A5E4?style=flat-square&logo=telegram&logoColor=white)
+![sentence-transformers](https://img.shields.io/badge/sentence--transformers-Embeddings-FF6F00?style=flat-square)
+![spaCy](https://img.shields.io/badge/spaCy-NLP-09A3D5?style=flat-square&logo=spacy&logoColor=white)
+![KeyBERT](https://img.shields.io/badge/KeyBERT-Keyword_Extraction-FF6F00?style=flat-square)
 
 ### Dev Stack
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
@@ -94,6 +105,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 ![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-Components-000000?style=flat-square&logo=shadcnui&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![pgvector](https://img.shields.io/badge/pgvector-Vector_Search-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 
 ### Dev Environment
 ![Ghostty](https://img.shields.io/badge/Ghostty-Terminal-1C1E26?style=flat-square&logo=ghostty&logoColor=white)
@@ -106,10 +118,12 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 ![Tailscale](https://img.shields.io/badge/Tailscale-Mesh_VPN-000000?style=flat-square&logo=tailscale&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04_LTS-E95420?style=flat-square&logo=ubuntu&logoColor=white)
 ![Hetzner](https://img.shields.io/badge/Hetzner-Cloud_VPS-D50C2D?style=flat-square&logo=hetzner&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-Frontend-000000?style=flat-square&logo=vercel&logoColor=white)
 
 ### Tools & Integrations
 ![Microsoft 365](https://img.shields.io/badge/Microsoft_365-Consulting-D83B01?style=flat-square&logo=microsoft&logoColor=white)
 ![n8n](https://img.shields.io/badge/n8n-Workflow_Automation-EA4B71?style=flat-square&logo=n8n&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-Scraping-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
 ## Featured Repos
 
@@ -122,10 +136,12 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 I spent years in Microsoft Cloud consulting — deploying M365 environments, managing tenant security, and building automation for enterprise clients. That experience shapes how I approach AI engineering: production-grade infrastructure, security by default, and operational discipline over hype.
 
+More recently, I've built automated data pipelines with German-language NLP — compound splitting, semantic matching, and embedding-based deduplication for production use cases.
+
 Today I focus on AI agents and agentic systems. I build agents that run unattended in production, not demos that break after the first edge case. The enterprise mindset is the differentiator — I think in terms of uptime, audit trails, and access control, not just prompt quality.
 
 ---
 
-**Available for freelance and consulting projects** in AI agent development, fullstack web applications, and automation.
+**Available for freelance and consulting projects** in AI agent development, fullstack web applications, NLP/ML systems, and automation.
 
 🔗 [LinkedIn](https://www.linkedin.com/in/franz-paul-016938258/)
