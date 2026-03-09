@@ -134,34 +134,85 @@
   <!-- ==================== -->
 
   <!-- Shadow -->
-  <ellipse class="ghostty-shadow" cx="164" cy="92" rx="22" ry="5" fill="#000"/>
+  <ellipse class="ghostty-shadow" cx="164" cy="92" rx="24" ry="5" fill="#000"/>
 
   <!-- Ghostty Character -->
   <g class="ghostty-body">
-    <!-- Ghost dome - stepped pixel art (4px grid) -->
-    <rect x="152" y="16" width="24" height="4" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
-    <rect x="148" y="20" width="32" height="4" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
-    <rect x="144" y="24" width="40" height="4" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
-    <rect x="140" y="28" width="48" height="4" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
-    <!-- Ghost head -->
-    <rect x="136" y="32" width="56" height="12" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
-    <!-- Ghost body -->
-    <rect x="136" y="44" width="56" height="20" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+    <!--
+      FIX: Ghost fill rects have NO individual strokes.
+      A single outline <path> traces the silhouette once,
+      eliminating double-stroke artifacts at all shared edges
+      (dome row junctions, head-body, body-tentacle).
+
+      FIX: Fill color darkened from #F0F2F5 to #E8EAED for
+      adequate contrast on white GitHub backgrounds while
+      still reading as ghost-white on dark backgrounds.
+    -->
+    <!-- Dome row 1 -->
+    <rect x="152" y="16" width="24" height="4" fill="#E8EAED"/>
+    <!-- Dome row 2 -->
+    <rect x="148" y="20" width="32" height="4" fill="#E8EAED"/>
+    <!-- Dome row 3 -->
+    <rect x="144" y="24" width="40" height="4" fill="#E8EAED"/>
+    <!-- Dome row 4 -->
+    <rect x="140" y="28" width="48" height="4" fill="#E8EAED"/>
+    <!-- Head -->
+    <rect x="136" y="32" width="56" height="12" fill="#E8EAED"/>
+    <!-- Body -->
+    <rect x="136" y="44" width="56" height="20" fill="#E8EAED"/>
+    <!-- Tentacles (fill only, inside wobble group) -->
+    <g class="ghostty-tentacles">
+      <rect x="136" y="64" width="12" height="10" fill="#E8EAED"/>
+      <rect x="152" y="64" width="12" height="16" fill="#E8EAED"/>
+      <rect x="168" y="64" width="12" height="10" fill="#E8EAED"/>
+      <rect x="184" y="64" width="8" height="16" fill="#E8EAED"/>
+    </g>
+
+    <!--
+      Single ghost silhouette outline.
+      Coordinates match current geometry:
+      - Body: x=136..192, dome centered on x=164
+      - Tentacles: 12px wide with 4px gaps, last one 8px
+      - Pattern: short(10px) - long(16px) - short(10px) - long(16px)
+
+      Path traces clockwise from top-left of dome row 1.
+    -->
+    <path class="ghostty-tentacles" d="
+      M152,16 h24
+      v4 h4
+      v4 h4
+      v4 h4
+      v4 h4
+      v32
+      v10 h-4 v-10
+      h-4
+      v16 h-12
+      v-16 h-4
+      v10 h-12
+      v-10 h-4
+      v16 h-12
+      v-16
+      v-32
+      h-4 v-4
+      h-4 v-4
+      h-4 v-4
+      Z"
+      fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
+
     <!-- Left eye -->
     <rect class="ghostty-eye" x="148" y="36" width="8" height="12" fill="#000000"/>
     <!-- Right eye -->
     <rect class="ghostty-eye" x="176" y="36" width="8" height="12" fill="#000000"/>
-    <!-- Simple mouth line -->
-    <rect x="156" y="52" width="16" height="4" fill="#000000"/>
-    <!-- Blinking underscore cursor below mouth -->
-    <rect class="terminal-cursor" x="160" y="60" width="8" height="4" fill="#000000"/>
-    <!-- Ghost tentacles (wavy bottom - alternating short/long) -->
-    <g class="ghostty-tentacles">
-      <rect x="136" y="64" width="12" height="10" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
-      <rect x="152" y="64" width="12" height="16" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
-      <rect x="168" y="64" width="12" height="10" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
-      <rect x="184" y="64" width="8" height="16" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
-    </g>
+    <!--
+      FIX: Terminal prompt > replaces plain mouth line.
+      Pixel-art chevron gives the ghost a terminal-themed mouth
+      that reinforces the Ghostty identity.
+    -->
+    <rect x="156" y="50" width="4" height="4" fill="#000000"/>
+    <rect x="160" y="54" width="4" height="4" fill="#000000"/>
+    <rect x="156" y="58" width="4" height="4" fill="#000000"/>
+    <!-- Blinking underscore cursor beside prompt -->
+    <rect class="terminal-cursor" x="168" y="58" width="8" height="4" fill="#000000"/>
     <!-- Blush marks -->
     <rect x="140" y="48" width="4" height="4" fill="#FFBABA" opacity="0.7"/>
     <rect x="184" y="48" width="4" height="4" fill="#FFBABA" opacity="0.7"/>
