@@ -27,36 +27,89 @@
       60% { transform: scaleY(0.85); }
     }
 
-    /* === Ghostty Animations === */
-    @keyframes ghost-float {
-      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
-      20% { transform: translateY(-10px) scaleY(1.05) scaleX(0.98); }
-      40% { transform: translateY(-16px) scaleY(1.03) scaleX(0.99); }
-      60% { transform: translateY(-15px) scaleY(1.02) scaleX(1.0); }
-      80% { transform: translateY(-4px) scaleY(0.97) scaleX(1.02); }
+    /* === Ghostty: Glitchy ghost float (CRT-style jitter) === */
+    @keyframes ghost-glitch-float {
+      0%    { transform: translateY(0px); }
+      3%    { transform: translateY(-2px); }
+      5%    { transform: translateY(1px); }
+      8%    { transform: translateY(-4px); }
+      10%   { transform: translateY(-1px); }
+      14%   { transform: translateY(-3px); }
+      16%   { transform: translateY(0px); }
+      20%   { transform: translateY(-2px); }
+      22%   { transform: translateY(-5px); }
+      25%   { transform: translateY(-1px); }
+      28%   { transform: translateY(-3px); }
+      32%   { transform: translateY(0px); }
+      35%   { transform: translateY(-2px); }
+      38%   { transform: translateY(-4px); }
+      40%   { transform: translateY(-1px); }
+      50%   { transform: translateY(-2px); }
+      55%   { transform: translateY(-5px); }
+      60%   { transform: translateY(-1px); }
+      65%   { transform: translateY(-3px); }
+      70%   { transform: translateY(1px); }
+      75%   { transform: translateY(-2px); }
+      80%   { transform: translateY(-4px); }
+      85%   { transform: translateY(0px); }
+      90%   { transform: translateY(-3px); }
+      95%   { transform: translateY(1px); }
+      100%  { transform: translateY(0px); }
     }
-    /* Y-axis rotation simulated via scaleX: spin then pause frontal */
+
+    /* === Ghostty: Gentle Y-axis rotation (scaleX, never full flip) === */
     @keyframes ghost-spin {
       0%   { transform: scaleX(1); }
-      10%  { transform: scaleX(0.15); }
-      25%  { transform: scaleX(-1); }
-      40%  { transform: scaleX(0.15); }
+      12%  { transform: scaleX(0.4); }
+      25%  { transform: scaleX(0.85); }
+      37%  { transform: scaleX(0.4); }
       50%  { transform: scaleX(1); }
       100% { transform: scaleX(1); }
     }
-    /* Face fades out during side/back view */
+
+    /* === Ghostty: Face partial fade during rotation === */
     @keyframes ghost-face {
       0%   { opacity: 1; }
-      7%   { opacity: 0; }
-      43%  { opacity: 0; }
+      10%  { opacity: 0.3; }
+      25%  { opacity: 0.6; }
+      35%  { opacity: 0.3; }
       50%  { opacity: 1; }
       100% { opacity: 1; }
     }
-    /* Blink once during the frontal pause phase */
-    @keyframes ghost-blink {
-      0%, 64%, 70%, 100% { transform: scaleY(1); }
-      67% { transform: scaleY(0.1); }
+
+    /* === Ghostty: Expression cycling (opacity swap, synced to 4s spin) === */
+    /* Terminal eyes >_ and - : visible 0-10% (before spin) and 70-100% (frontal pause) */
+    @keyframes expr-terminal-cycle {
+      0%   { opacity: 1; }
+      10%  { opacity: 1; }
+      12%  { opacity: 0; }
+      48%  { opacity: 0; }
+      50%  { opacity: 0; }
+      65%  { opacity: 0; }
+      70%  { opacity: 1; }
+      100% { opacity: 1; }
     }
+    /* Blink/dash eyes: visible 12-48% (during spin) and brief 65-67% (quick blink) */
+    @keyframes expr-blink-cycle {
+      0%   { opacity: 0; }
+      12%  { opacity: 1; }
+      48%  { opacity: 1; }
+      50%  { opacity: 0; }
+      64%  { opacity: 0; }
+      65%  { opacity: 1; }
+      67%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    /* Open round eyes: visible 50-64% (after spin, frontal pause) */
+    @keyframes expr-open-cycle {
+      0%   { opacity: 0; }
+      48%  { opacity: 0; }
+      50%  { opacity: 1; }
+      64%  { opacity: 1; }
+      65%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
     @keyframes ghost-wobble {
       0%, 100% { transform: translateX(0); }
       30% { transform: translateX(3px); }
@@ -96,7 +149,7 @@
 
     /* === Ghostty Body === */
     .ghostty-body {
-      animation: ghost-float 0.5s ease-in-out infinite 0.08s;
+      animation: ghost-glitch-float 0.8s step-end infinite;
       transform-origin: 164px 82px;
     }
     .ghostty-spin {
@@ -114,9 +167,16 @@
     .ghostty-face {
       animation: ghost-face 4s ease-in-out infinite;
     }
-    .ghostty-eye {
-      animation: ghost-blink 4s ease-in-out infinite;
-      transform-origin: center center;
+    .expr-terminal {
+      animation: expr-terminal-cycle 4s ease-in-out infinite;
+    }
+    .expr-blink {
+      opacity: 0;
+      animation: expr-blink-cycle 4s ease-in-out infinite;
+    }
+    .expr-open {
+      opacity: 0;
+      animation: expr-open-cycle 4s ease-in-out infinite;
     }
     .terminal-cursor {
       animation: blink-cursor 1s linear infinite;
@@ -207,18 +267,35 @@
         Z"
         fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
-      <!-- Face group: fades out during rotation -->
+      <!-- Face: three expression states, opacity-cycled -->
       <g class="ghostty-face">
-        <!-- Left eye -->
-        <rect class="ghostty-eye" x="148" y="36" width="8" height="10" fill="#000000"/>
-        <!-- Right eye -->
-        <rect class="ghostty-eye" x="172" y="36" width="8" height="10" fill="#000000"/>
-        <!-- Terminal prompt > -->
-        <rect x="156" y="50" width="4" height="4" fill="#000000"/>
-        <rect x="160" y="54" width="4" height="4" fill="#000000"/>
-        <rect x="156" y="58" width="4" height="4" fill="#000000"/>
-        <!-- Blinking underscore cursor beside prompt -->
-        <rect class="terminal-cursor" x="168" y="58" width="8" height="4" fill="#000000"/>
+
+        <!-- Expression 1: Terminal eyes (>_ left, - right) — DEFAULT -->
+        <g class="expr-terminal">
+          <!-- Left eye: > chevron -->
+          <rect x="148" y="36" width="4" height="4" fill="#000"/>
+          <rect x="152" y="40" width="4" height="4" fill="#000"/>
+          <rect x="148" y="44" width="4" height="4" fill="#000"/>
+          <!-- _ underscore -->
+          <rect x="156" y="44" width="4" height="4" fill="#000"/>
+          <!-- Blinking cursor -->
+          <rect class="terminal-cursor" x="160" y="44" width="4" height="4" fill="#000"/>
+          <!-- Right eye: - dash -->
+          <rect x="172" y="40" width="8" height="4" fill="#000"/>
+        </g>
+
+        <!-- Expression 2: Blink/dash eyes (during rotation) -->
+        <g class="expr-blink">
+          <rect x="148" y="40" width="12" height="4" fill="#000"/>
+          <rect x="172" y="40" width="8" height="4" fill="#000"/>
+        </g>
+
+        <!-- Expression 3: Open round eyes (after rotation) -->
+        <g class="expr-open">
+          <rect x="148" y="36" width="8" height="10" fill="#000"/>
+          <rect x="172" y="36" width="8" height="10" fill="#000"/>
+        </g>
+
       </g>
     </g>
   </g>
