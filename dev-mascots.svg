@@ -27,93 +27,78 @@
       60% { transform: scaleY(0.85); }
     }
 
-    /* === Ghostty: Glitchy ghost float (CRT-style jitter) === */
-    @keyframes ghost-glitch-float {
-      0%    { transform: translateY(0px); }
-      3%    { transform: translateY(-2px); }
-      5%    { transform: translateY(1px); }
-      8%    { transform: translateY(-4px); }
-      10%   { transform: translateY(-1px); }
-      14%   { transform: translateY(-3px); }
-      16%   { transform: translateY(0px); }
-      20%   { transform: translateY(-2px); }
-      22%   { transform: translateY(-5px); }
-      25%   { transform: translateY(-1px); }
-      28%   { transform: translateY(-3px); }
-      32%   { transform: translateY(0px); }
-      35%   { transform: translateY(-2px); }
-      38%   { transform: translateY(-4px); }
-      40%   { transform: translateY(-1px); }
-      50%   { transform: translateY(-2px); }
-      55%   { transform: translateY(-5px); }
-      60%   { transform: translateY(-1px); }
-      65%   { transform: translateY(-3px); }
-      70%   { transform: translateY(1px); }
-      75%   { transform: translateY(-2px); }
-      80%   { transform: translateY(-4px); }
-      85%   { transform: translateY(0px); }
-      90%   { transform: translateY(-3px); }
-      95%   { transform: translateY(1px); }
-      100%  { transform: translateY(0px); }
+    /* === Ghostty: Smooth ghostly float === */
+    @keyframes ghost-float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
     }
 
-    /* === Ghostty: Gentle Y-axis rotation (scaleX, never full flip) === */
+    /* === Ghostty: Occasional glitch accent (layered on top of float) === */
+    @keyframes ghost-glitch {
+      0%   { transform: translateY(0) translateX(0); }
+      /* Idle most of the time */
+      84%  { transform: translateY(0) translateX(0); }
+      /* Quick glitch burst */
+      85%  { transform: translateY(-3px) translateX(1px); }
+      87%  { transform: translateY(2px) translateX(-2px); }
+      89%  { transform: translateY(-1px) translateX(1px); }
+      91%  { transform: translateY(0) translateX(0); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+
+    /* === Ghostty: Smooth Y-axis rotation (single pinch) === */
     @keyframes ghost-spin {
       0%   { transform: scaleX(1); }
-      12%  { transform: scaleX(0.4); }
-      25%  { transform: scaleX(0.85); }
-      37%  { transform: scaleX(0.4); }
-      50%  { transform: scaleX(1); }
+      15%  { transform: scaleX(0.15); }
+      30%  { transform: scaleX(1); }
       100% { transform: scaleX(1); }
     }
 
-    /* === Ghostty: Face partial fade during rotation === */
+    /* === Ghostty: Face fade during rotation === */
     @keyframes ghost-face {
       0%   { opacity: 1; }
-      10%  { opacity: 0.3; }
-      25%  { opacity: 0.6; }
-      35%  { opacity: 0.3; }
-      50%  { opacity: 1; }
+      14%  { opacity: 0.15; }
+      17%  { opacity: 0.15; }
+      30%  { opacity: 1; }
       100% { opacity: 1; }
     }
 
-    /* === Ghostty: Expression cycling (opacity swap, synced to 4s spin) === */
-    /* Terminal eyes >_ and - : visible 0-10% (before spin) and 70-100% (frontal pause) */
+    /* === Ghostty: Expression cycling (synced to 6s spin) === */
+    /* Terminal eyes >_ and - : visible before/after spin (0-12% and 32-100%) */
     @keyframes expr-terminal-cycle {
       0%   { opacity: 1; }
       10%  { opacity: 1; }
       12%  { opacity: 0; }
-      48%  { opacity: 0; }
-      50%  { opacity: 0; }
-      65%  { opacity: 0; }
-      70%  { opacity: 1; }
+      28%  { opacity: 0; }
+      32%  { opacity: 1; }
       100% { opacity: 1; }
     }
-    /* Blink/dash eyes: visible 12-48% (during spin) and brief 65-67% (quick blink) */
+    /* Blink/dash eyes: visible during thinnest part of spin (12-20%) */
     @keyframes expr-blink-cycle {
       0%   { opacity: 0; }
       12%  { opacity: 1; }
-      48%  { opacity: 1; }
-      50%  { opacity: 0; }
-      64%  { opacity: 0; }
-      65%  { opacity: 1; }
-      67%  { opacity: 0; }
+      20%  { opacity: 1; }
+      22%  { opacity: 0; }
       100% { opacity: 0; }
     }
-    /* Open round eyes: visible 50-64% (after spin, frontal pause) */
+    /* Open round eyes: visible briefly after spin returns (22-30%) + quick blink at 60% */
     @keyframes expr-open-cycle {
       0%   { opacity: 0; }
-      48%  { opacity: 0; }
-      50%  { opacity: 1; }
-      64%  { opacity: 1; }
-      65%  { opacity: 0; }
+      20%  { opacity: 0; }
+      22%  { opacity: 1; }
+      30%  { opacity: 1; }
+      32%  { opacity: 0; }
+      /* Brief surprised blink */
+      58%  { opacity: 0; }
+      60%  { opacity: 1; }
+      64%  { opacity: 0; }
       100% { opacity: 0; }
     }
 
-    @keyframes ghost-wobble {
+    @keyframes ghost-tentacle-sway {
       0%, 100% { transform: translateX(0); }
-      30% { transform: translateX(3px); }
-      70% { transform: translateX(-3px); }
+      25% { transform: translateX(2px); }
+      75% { transform: translateX(-2px); }
     }
     @keyframes blink-cursor {
       0%, 49% { opacity: 1; }
@@ -149,34 +134,37 @@
 
     /* === Ghostty Body === */
     .ghostty-body {
-      animation: ghost-glitch-float 0.8s step-end infinite;
+      animation: ghost-float 3s ease-in-out infinite;
       transform-origin: 164px 82px;
     }
+    .ghostty-glitch {
+      animation: ghost-glitch 5s ease-in-out infinite;
+    }
     .ghostty-spin {
-      animation: ghost-spin 4s ease-in-out infinite;
+      animation: ghost-spin 6s ease-in-out infinite;
       transform-origin: 164px 50px;
     }
     .ghostty-shadow {
-      animation: shadow-scale 0.5s ease-in-out infinite 0.08s;
+      animation: shadow-scale 3s ease-in-out infinite;
       transform-origin: 164px 92px;
     }
     .ghostty-tentacles {
-      animation: ghost-wobble 0.5s ease-in-out infinite 0.08s;
+      animation: ghost-tentacle-sway 2.3s ease-in-out infinite;
       transform-origin: center top;
     }
     .ghostty-face {
-      animation: ghost-face 4s ease-in-out infinite;
+      animation: ghost-face 6s ease-in-out infinite;
     }
     .expr-terminal {
-      animation: expr-terminal-cycle 4s ease-in-out infinite;
+      animation: expr-terminal-cycle 6s linear infinite;
     }
     .expr-blink {
       opacity: 0;
-      animation: expr-blink-cycle 4s ease-in-out infinite;
+      animation: expr-blink-cycle 6s linear infinite;
     }
     .expr-open {
       opacity: 0;
-      animation: expr-open-cycle 4s ease-in-out infinite;
+      animation: expr-open-cycle 6s linear infinite;
     }
     .terminal-cursor {
       animation: blink-cursor 1s linear infinite;
@@ -223,6 +211,7 @@
 
   <!-- Ghostty Character -->
   <g class="ghostty-body">
+   <g class="ghostty-glitch">
     <g class="ghostty-spin">
       <!-- Dome row 1 -->
       <rect x="152" y="16" width="24" height="4" fill="#E8EAED"/>
@@ -298,5 +287,6 @@
 
       </g>
     </g>
+   </g>
   </g>
 </svg>
