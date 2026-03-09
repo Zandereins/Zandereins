@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 100" width="280" height="126">
+  <style>
+    /* === Shared Bounce === */
+    @keyframes jump {
+      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
+      30% { transform: translateY(-16px) scaleY(1.1) scaleX(0.95); }
+      50% { transform: translateY(-18px) scaleY(1.05) scaleX(0.98); }
+      80% { transform: translateY(-5px) scaleY(0.95) scaleX(1.05); }
+    }
+    @keyframes shadow-scale {
+      0%, 100% { transform: scaleX(1); opacity: 0.25; }
+      50% { transform: scaleX(0.4); opacity: 0.08; }
+    }
+
+    /* === Claude Animations === */
+    @keyframes wave-left {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-25deg); }
+    }
+    @keyframes wave-right {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(25deg); }
+    }
+    @keyframes ear-bounce {
+      0%, 100% { transform: scaleY(1); }
+      40% { transform: scaleY(1.2); }
+      60% { transform: scaleY(0.85); }
+    }
+
+    /* === Ghostty Animations === */
+    @keyframes ghost-float {
+      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
+      20% { transform: translateY(-10px) scaleY(1.05) scaleX(0.98); }
+      40% { transform: translateY(-16px) scaleY(1.03) scaleX(0.99); }
+      60% { transform: translateY(-15px) scaleY(1.02) scaleX(1.0); }
+      80% { transform: translateY(-4px) scaleY(0.97) scaleX(1.02); }
+    }
+    @keyframes ghost-wobble {
+      0%, 100% { transform: translateX(0); }
+      30% { transform: translateX(3px); }
+      70% { transform: translateX(-3px); }
+    }
+    @keyframes blink-cursor {
+      0%, 49% { opacity: 1; }
+      50%, 99% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes ghost-blink {
+      0%, 42%, 48%, 100% { transform: scaleY(1); }
+      45% { transform: scaleY(0.1); }
+    }
+
+    /* === Claude Body === */
+    .claude-body {
+      animation: jump 0.5s ease-in-out infinite;
+      transform-origin: 50px 82px;
+    }
+    .claude-shadow {
+      animation: shadow-scale 0.5s ease-in-out infinite;
+      transform-origin: 50px 92px;
+    }
+    .left-arm {
+      animation: wave-left 0.5s ease-in-out infinite;
+      transform-origin: right center;
+    }
+    .right-arm {
+      animation: wave-right 0.5s ease-in-out infinite 0.04s;
+      transform-origin: left center;
+    }
+    .left-ear {
+      animation: ear-bounce 0.5s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    .right-ear {
+      animation: ear-bounce 0.5s ease-in-out infinite 0.1s;
+      transform-origin: center bottom;
+    }
+
+    /* === Ghostty Body (same duration, offset delay for symbiosis) === */
+    .ghostty-body {
+      animation: ghost-float 0.5s ease-in-out infinite 0.08s;
+      transform-origin: 164px 82px;
+    }
+    .ghostty-shadow {
+      animation: shadow-scale 0.5s ease-in-out infinite 0.08s;
+      transform-origin: 164px 92px;
+    }
+    .ghostty-tentacles {
+      animation: ghost-wobble 0.5s ease-in-out infinite 0.08s;
+      transform-origin: center top;
+    }
+    .terminal-cursor {
+      animation: blink-cursor 1s linear infinite;
+    }
+    .ghostty-eye {
+      animation: ghost-blink 3s linear infinite;
+      transform-origin: center center;
+    }
+  </style>
+
+  <!-- ==================== -->
+  <!-- CHARACTER 1: CLAUDE  -->
+  <!-- ==================== -->
+
+  <!-- Shadow -->
+  <ellipse class="claude-shadow" cx="50" cy="92" rx="22" ry="5" fill="#000"/>
+
+  <!-- Claude Character -->
+  <g class="claude-body">
+    <!-- Left ear -->
+    <rect class="left-ear" x="22" y="16" width="8" height="16" fill="#E07C4C"/>
+    <!-- Right ear -->
+    <rect class="right-ear" x="70" y="16" width="8" height="16" fill="#E07C4C"/>
+    <!-- Body top (narrower) -->
+    <rect x="18" y="32" width="64" height="4" fill="#E07C4C"/>
+    <!-- Body main -->
+    <rect x="14" y="36" width="72" height="32" fill="#E07C4C"/>
+    <!-- Left eye -->
+    <rect x="30" y="42" width="8" height="10" fill="#000000"/>
+    <!-- Right eye -->
+    <rect x="62" y="42" width="8" height="10" fill="#000000"/>
+    <!-- Left arm -->
+    <rect class="left-arm" x="2" y="44" width="12" height="8" fill="#E07C4C"/>
+    <!-- Right arm -->
+    <rect class="right-arm" x="86" y="44" width="12" height="8" fill="#E07C4C"/>
+    <!-- Left leg -->
+    <rect x="24" y="68" width="12" height="14" fill="#E07C4C"/>
+    <!-- Right leg -->
+    <rect x="64" y="68" width="12" height="14" fill="#E07C4C"/>
+  </g>
+
+  <!-- ==================== -->
+  <!-- CHARACTER 2: GHOSTTY -->
+  <!-- ==================== -->
+
+  <!-- Shadow -->
+  <ellipse class="ghostty-shadow" cx="164" cy="92" rx="22" ry="5" fill="#000"/>
+
+  <!-- Ghostty Character -->
+  <g class="ghostty-body">
+    <!-- Ghost dome - stepped pixel art (4px grid) -->
+    <rect x="152" y="16" width="24" height="4" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+    <rect x="148" y="20" width="32" height="4" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+    <rect x="144" y="24" width="40" height="4" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+    <rect x="140" y="28" width="48" height="4" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+    <!-- Ghost head -->
+    <rect x="136" y="32" width="56" height="12" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+    <!-- Ghost body -->
+    <rect x="136" y="44" width="56" height="20" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+    <!-- Left eye -->
+    <rect class="ghostty-eye" x="148" y="36" width="8" height="12" fill="#000000"/>
+    <!-- Right eye -->
+    <rect class="ghostty-eye" x="176" y="36" width="8" height="12" fill="#000000"/>
+    <!-- Simple mouth line -->
+    <rect x="156" y="52" width="16" height="4" fill="#000000"/>
+    <!-- Blinking underscore cursor below mouth -->
+    <rect class="terminal-cursor" x="160" y="60" width="8" height="4" fill="#000000"/>
+    <!-- Ghost tentacles (wavy bottom - alternating short/long) -->
+    <g class="ghostty-tentacles">
+      <rect x="136" y="64" width="12" height="10" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+      <rect x="152" y="64" width="12" height="16" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+      <rect x="168" y="64" width="12" height="10" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+      <rect x="184" y="64" width="8" height="16" fill="#F0F2F5" stroke="#A0A8B0" stroke-width="1"/>
+    </g>
+    <!-- Blush marks -->
+    <rect x="140" y="48" width="4" height="4" fill="#FFBABA" opacity="0.7"/>
+    <rect x="184" y="48" width="4" height="4" fill="#FFBABA" opacity="0.7"/>
+  </g>
+</svg>
