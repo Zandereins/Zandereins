@@ -27,83 +27,36 @@
       60% { transform: scaleY(0.85); }
     }
 
-    /* === Ghostty: Smooth ghostly float === */
+    /* === Ghostty: Gentle float === */
     @keyframes ghost-float {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-4px); }
     }
 
-    /* === Ghostty: Occasional glitch accent (layered on top of float) === */
-    @keyframes ghost-glitch {
-      0%   { transform: translateY(0) translateX(0); }
-      /* Idle most of the time */
-      84%  { transform: translateY(0) translateX(0); }
-      /* Quick glitch burst */
-      85%  { transform: translateY(-3px) translateX(1px); }
-      87%  { transform: translateY(2px) translateX(-2px); }
-      89%  { transform: translateY(-1px) translateX(1px); }
-      91%  { transform: translateY(0) translateX(0); }
-      100% { transform: translateY(0) translateX(0); }
-    }
-
-    /* === Ghostty: Smooth Y-axis rotation (single pinch) === */
+    /* === Ghostty: Smooth continuous Y-axis rotation === */
     @keyframes ghost-spin {
       0%   { transform: scaleX(1); }
-      15%  { transform: scaleX(0.15); }
-      30%  { transform: scaleX(1); }
+      25%  { transform: scaleX(0.15); }
+      50%  { transform: scaleX(1); }
+      75%  { transform: scaleX(0.15); }
       100% { transform: scaleX(1); }
     }
 
     /* === Ghostty: Face fade during rotation === */
     @keyframes ghost-face {
       0%   { opacity: 1; }
-      14%  { opacity: 0.15; }
-      17%  { opacity: 0.15; }
-      30%  { opacity: 1; }
-      100% { opacity: 1; }
-    }
-
-    /* === Ghostty: Expression cycling (synced to 6s spin) === */
-    /* Terminal eyes >_ and - : visible before/after spin (0-12% and 32-100%) */
-    @keyframes expr-terminal-cycle {
-      0%   { opacity: 1; }
-      10%  { opacity: 1; }
-      12%  { opacity: 0; }
-      28%  { opacity: 0; }
-      32%  { opacity: 1; }
-      100% { opacity: 1; }
-    }
-    /* Blink/dash eyes: visible during thinnest part of spin (12-20%) */
-    @keyframes expr-blink-cycle {
-      0%   { opacity: 0; }
-      12%  { opacity: 1; }
-      20%  { opacity: 1; }
-      22%  { opacity: 0; }
-      100% { opacity: 0; }
-    }
-    /* Open round eyes: visible briefly after spin returns (22-30%) + quick blink at 60% */
-    @keyframes expr-open-cycle {
-      0%   { opacity: 0; }
       20%  { opacity: 0; }
-      22%  { opacity: 1; }
-      30%  { opacity: 1; }
-      32%  { opacity: 0; }
-      /* Brief surprised blink */
-      58%  { opacity: 0; }
-      60%  { opacity: 1; }
-      64%  { opacity: 0; }
-      100% { opacity: 0; }
+      30%  { opacity: 0; }
+      50%  { opacity: 1; }
+      70%  { opacity: 0; }
+      80%  { opacity: 0; }
+      100% { opacity: 1; }
     }
 
     @keyframes ghost-tentacle-sway {
       0%, 100% { transform: translateX(0); }
       25% { transform: translateX(2px); }
       75% { transform: translateX(-2px); }
-    }
-    @keyframes blink-cursor {
-      0%, 49% { opacity: 1; }
-      50%, 99% { opacity: 0; }
-      100% { opacity: 1; }
     }
 
     /* === Claude Body === */
@@ -137,11 +90,8 @@
       animation: ghost-float 3s ease-in-out infinite;
       transform-origin: 164px 82px;
     }
-    .ghostty-glitch {
-      animation: ghost-glitch 5s ease-in-out infinite;
-    }
     .ghostty-spin {
-      animation: ghost-spin 6s ease-in-out infinite;
+      animation: ghost-spin 7s ease-in-out infinite;
       transform-origin: 164px 50px;
     }
     .ghostty-shadow {
@@ -153,21 +103,7 @@
       transform-origin: center top;
     }
     .ghostty-face {
-      animation: ghost-face 6s ease-in-out infinite;
-    }
-    .expr-terminal {
-      animation: expr-terminal-cycle 6s linear infinite;
-    }
-    .expr-blink {
-      opacity: 0;
-      animation: expr-blink-cycle 6s linear infinite;
-    }
-    .expr-open {
-      opacity: 0;
-      animation: expr-open-cycle 6s linear infinite;
-    }
-    .terminal-cursor {
-      animation: blink-cursor 1s linear infinite;
+      animation: ghost-face 7s ease-in-out infinite;
     }
   </style>
 
@@ -211,7 +147,6 @@
 
   <!-- Ghostty Character -->
   <g class="ghostty-body">
-   <g class="ghostty-glitch">
     <g class="ghostty-spin">
       <!-- Dome row 1 -->
       <rect x="152" y="16" width="24" height="4" fill="#E8EAED"/>
@@ -256,37 +191,13 @@
         Z"
         fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
-      <!-- Face: three expression states, opacity-cycled -->
+      <!-- Face: rectangular eye cutouts (original Ghostty style) -->
       <g class="ghostty-face">
-
-        <!-- Expression 1: Terminal eyes (>_ left, - right) — DEFAULT -->
-        <g class="expr-terminal">
-          <!-- Left eye: > chevron -->
-          <rect x="148" y="36" width="4" height="4" fill="#000"/>
-          <rect x="152" y="40" width="4" height="4" fill="#000"/>
-          <rect x="148" y="44" width="4" height="4" fill="#000"/>
-          <!-- _ underscore -->
-          <rect x="156" y="44" width="4" height="4" fill="#000"/>
-          <!-- Blinking cursor -->
-          <rect class="terminal-cursor" x="160" y="44" width="4" height="4" fill="#000"/>
-          <!-- Right eye: - dash -->
-          <rect x="172" y="40" width="8" height="4" fill="#000"/>
-        </g>
-
-        <!-- Expression 2: Blink/dash eyes (during rotation) -->
-        <g class="expr-blink">
-          <rect x="148" y="40" width="12" height="4" fill="#000"/>
-          <rect x="172" y="40" width="8" height="4" fill="#000"/>
-        </g>
-
-        <!-- Expression 3: Open round eyes (after rotation) -->
-        <g class="expr-open">
-          <rect x="148" y="36" width="8" height="10" fill="#000"/>
-          <rect x="172" y="36" width="8" height="10" fill="#000"/>
-        </g>
-
+        <!-- Left eye -->
+        <rect x="146" y="36" width="10" height="12" fill="#000"/>
+        <!-- Right eye -->
+        <rect x="172" y="36" width="10" height="12" fill="#000"/>
       </g>
     </g>
-   </g>
   </g>
 </svg>
