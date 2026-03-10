@@ -106,25 +106,53 @@
       animation: ghost-face 7s ease-in-out infinite;
     }
 
-    /* === Ghostty: Eye blink animation === */
-    @keyframes ghost-blink {
+    /* === Ghostty: 3-expression eye cycle (8s loop) ===
+       0-30%:  oval eyes open
+       30-33%: blink (close)
+       33-60%: oval eyes open again
+       60-63%: blink (close)
+       63-90%: >_ terminal eyes
+       90-93%: blink (close)
+       93-100%: oval eyes (loop restart) */
+    @keyframes expr-oval {
       0%   { opacity: 1; }
-      45%  { opacity: 1; }
-      47%  { opacity: 0; }
-      53%  { opacity: 0; }
-      55%  { opacity: 1; }
+      30%  { opacity: 1; }
+      31%  { opacity: 0; }
+      33%  { opacity: 0; }
+      34%  { opacity: 1; }
+      60%  { opacity: 1; }
+      61%  { opacity: 0; }
+      93%  { opacity: 0; }
+      94%  { opacity: 1; }
       100% { opacity: 1; }
     }
-    @keyframes ghost-blink-inv {
+    @keyframes expr-terminal {
       0%   { opacity: 0; }
-      45%  { opacity: 0; }
-      47%  { opacity: 1; }
-      53%  { opacity: 1; }
-      55%  { opacity: 0; }
+      63%  { opacity: 0; }
+      64%  { opacity: 1; }
+      90%  { opacity: 1; }
+      91%  { opacity: 0; }
       100% { opacity: 0; }
     }
-    .expr-open  { animation: ghost-blink 4s ease infinite; }
-    .expr-blink { animation: ghost-blink-inv 4s ease infinite; }
+    @keyframes expr-blink-line {
+      0%   { opacity: 0; }
+      30.5% { opacity: 0; }
+      31%  { opacity: 1; }
+      33%  { opacity: 1; }
+      33.5% { opacity: 0; }
+      60.5% { opacity: 0; }
+      61%  { opacity: 1; }
+      63%  { opacity: 1; }
+      63.5% { opacity: 0; }
+      90.5% { opacity: 0; }
+      91%  { opacity: 1; }
+      93%  { opacity: 1; }
+      93.5% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .expr-open     { animation: expr-oval 8s ease infinite; }
+    .expr-terminal { animation: expr-terminal 8s ease infinite; }
+    .expr-blink    { animation: expr-blink-line 8s ease infinite; }
   </style>
 
   <!-- ==================== -->
@@ -211,14 +239,21 @@
         Z"
         fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
-      <!-- Face: Round eyes like the ghostty.org homepage ASCII ghost -->
+      <!-- Face: 3 expressions cycling with blinks between them -->
       <g class="ghostty-face">
-        <!-- Open eyes: two dark vertical ovals -->
+        <!-- Expression 1: Open oval eyes (default) -->
         <g class="expr-open">
           <ellipse cx="152" cy="41" rx="5" ry="6" fill="#23272F"/>
           <ellipse cx="176" cy="41" rx="5" ry="6" fill="#23272F"/>
         </g>
-        <!-- Blink: two horizontal lines (hidden by default) -->
+        <!-- Expression 2: >_ terminal prompt eyes -->
+        <g class="expr-terminal" opacity="0">
+          <!-- > chevron (left) -->
+          <polygon points="148,36 157,41 148,46" fill="#23272F"/>
+          <!-- _ dash (right) -->
+          <rect x="168" y="39.5" width="14" height="4" rx="1.5" fill="#23272F"/>
+        </g>
+        <!-- Blink: two horizontal lines (between expressions) -->
         <g class="expr-blink" opacity="0">
           <rect x="147" y="40" width="10" height="3" rx="1" fill="#23272F"/>
           <rect x="171" y="40" width="10" height="3" rx="1" fill="#23272F"/>
