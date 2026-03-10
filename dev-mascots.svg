@@ -1,0 +1,296 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="480" height="216">
+  <style>
+    /* === Animations === */
+
+    /* Claude main agent bounce */
+    @keyframes jump {
+      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
+      30% { transform: translateY(-10px) scaleY(1.08) scaleX(0.96); }
+      50% { transform: translateY(-12px) scaleY(1.04) scaleX(0.98); }
+      80% { transform: translateY(-3px) scaleY(0.96) scaleX(1.04); }
+    }
+    @keyframes wave-left {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-8deg); }
+    }
+    @keyframes wave-right {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(8deg); }
+    }
+    @keyframes ear-bounce {
+      0%, 100% { transform: scaleY(1); }
+      40% { transform: scaleY(1.08); }
+      60% { transform: scaleY(0.95); }
+    }
+
+    /* Subagent bounce (smaller) */
+    @keyframes sub-jump {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Connection line dash flow */
+    @keyframes dash-flow {
+      0% { stroke-dashoffset: 16; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    /* Status dot pulse */
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Shadow scale (synced with jump) */
+    @keyframes shadow-scale {
+      0%, 100% { transform: scaleX(1); opacity: 0.2; }
+      50% { transform: scaleX(0.5); opacity: 0.08; }
+    }
+    @keyframes sub-shadow-scale {
+      0%, 100% { transform: scaleX(1); opacity: 0.15; }
+      50% { transform: scaleX(0.6); opacity: 0.06; }
+    }
+
+    /* === Main Agent === */
+    .claude-main {
+      animation: jump 0.7s ease-in-out infinite;
+      transform-origin: 200px 62px;
+    }
+    .main-shadow {
+      animation: shadow-scale 0.7s ease-in-out infinite;
+      transform-origin: 200px 78px;
+    }
+    .main-left-arm {
+      animation: wave-left 0.7s ease-in-out infinite;
+      transform-origin: right center;
+    }
+    .main-right-arm {
+      animation: wave-right 0.7s ease-in-out infinite 0.05s;
+      transform-origin: left center;
+    }
+    .main-left-ear {
+      animation: ear-bounce 0.7s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+    .main-right-ear {
+      animation: ear-bounce 0.7s ease-in-out infinite 0.1s;
+      transform-origin: center bottom;
+    }
+
+    /* === Subagents === */
+    .sub-1 { animation: sub-jump 0.6s ease-in-out infinite; transform-origin: 60px 140px; }
+    .sub-2 { animation: sub-jump 0.6s ease-in-out infinite 0.12s; transform-origin: 130px 140px; }
+    .sub-3 { animation: sub-jump 0.6s ease-in-out infinite 0.24s; transform-origin: 200px 140px; }
+    .sub-4 { animation: sub-jump 0.6s ease-in-out infinite 0.36s; transform-origin: 270px 140px; }
+    .sub-5 { animation: sub-jump 0.6s ease-in-out infinite 0.48s; transform-origin: 340px 140px; }
+
+    .sub-shadow-1 { animation: sub-shadow-scale 0.6s ease-in-out infinite; transform-origin: 60px 152px; }
+    .sub-shadow-2 { animation: sub-shadow-scale 0.6s ease-in-out infinite 0.12s; transform-origin: 130px 152px; }
+    .sub-shadow-3 { animation: sub-shadow-scale 0.6s ease-in-out infinite 0.24s; transform-origin: 200px 152px; }
+    .sub-shadow-4 { animation: sub-shadow-scale 0.6s ease-in-out infinite 0.36s; transform-origin: 270px 152px; }
+    .sub-shadow-5 { animation: sub-shadow-scale 0.6s ease-in-out infinite 0.48s; transform-origin: 340px 152px; }
+
+    /* === Connections === */
+    .connection-line {
+      stroke: #4A9EFF;
+      stroke-width: 1.2;
+      stroke-dasharray: 4 4;
+      animation: dash-flow 0.8s linear infinite;
+      opacity: 0.5;
+    }
+
+    /* === Status Dots === */
+    .status-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
+    .sd-2 { animation-delay: 0.3s; }
+    .sd-3 { animation-delay: 0.6s; }
+    .sd-4 { animation-delay: 0.9s; }
+    .sd-5 { animation-delay: 1.2s; }
+
+    /* === Labels === */
+    .label {
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 7px;
+      fill: #50FA7B;
+      text-anchor: middle;
+      opacity: 0.7;
+    }
+    .title-text {
+      font-family: -apple-system, system-ui, 'Segoe UI', sans-serif;
+      font-size: 9px;
+      fill: #6C7086;
+      text-anchor: middle;
+    }
+  </style>
+
+  <!-- ======================== -->
+  <!-- TERMINAL WINDOW (GHOSTTY) -->
+  <!-- ======================== -->
+
+  <!-- Window background -->
+  <rect x="2" y="2" width="396" height="176" rx="8" fill="#1C1E26" stroke="#313244" stroke-width="1"/>
+
+  <!-- Title bar -->
+  <rect x="2" y="2" width="396" height="22" rx="8" fill="#282A36"/>
+  <rect x="2" y="16" width="396" height="8" fill="#282A36"/>
+  <!-- Separator line -->
+  <line x1="2" y1="24" x2="398" y2="24" stroke="#313244" stroke-width="0.5"/>
+
+  <!-- Traffic light dots -->
+  <circle cx="18" cy="13" r="4" fill="#FF5F57"/>
+  <circle cx="32" cy="13" r="4" fill="#FFBD2E"/>
+  <circle cx="46" cy="13" r="4" fill="#28CA42"/>
+
+  <!-- Centered: ghost icon + "Ghostty" title (matching title bar style) -->
+  <g transform="translate(178, 5)">
+    <!-- Ghost dome (rounded top) -->
+    <path d="M3,7 Q3,2 7,2 Q11,2 11,7 L11,11 L9,10 L7,11 L5,10 L3,11 Z" fill="#6C7086"/>
+    <!-- Ghost eyes -->
+    <circle cx="5.5" cy="6" r="1" fill="#282A36"/>
+    <circle cx="8.5" cy="6" r="1" fill="#282A36"/>
+  </g>
+  <text x="200" y="15" class="title-text">Ghostty</text>
+
+  <!-- ======================== -->
+  <!-- CONNECTION LINES         -->
+  <!-- ======================== -->
+  <g class="connections">
+    <line class="connection-line" x1="200" y1="76" x2="60" y2="120"/>
+    <line class="connection-line" x1="200" y1="76" x2="130" y2="120"/>
+    <line class="connection-line" x1="200" y1="76" x2="200" y2="120"/>
+    <line class="connection-line" x1="200" y1="76" x2="270" y2="120"/>
+    <line class="connection-line" x1="200" y1="76" x2="340" y2="120"/>
+  </g>
+
+  <!-- ======================== -->
+  <!-- CLAUDE CODE — MAIN AGENT -->
+  <!-- ======================== -->
+
+  <!-- Main agent shadow -->
+  <ellipse class="main-shadow" cx="200" cy="78" rx="18" ry="3" fill="#000"/>
+
+  <g class="claude-main">
+    <!-- Left ear -->
+    <rect class="main-left-ear" x="182" y="30" width="6" height="10" fill="#E07C4C"/>
+    <!-- Right ear -->
+    <rect class="main-right-ear" x="212" y="30" width="6" height="10" fill="#E07C4C"/>
+    <!-- Body top (shoulder) -->
+    <rect x="180" y="40" width="40" height="3" fill="#E07C4C"/>
+    <!-- Body main -->
+    <rect x="177" y="43" width="46" height="22" fill="#E07C4C"/>
+    <!-- Left eye -->
+    <rect x="187" y="47" width="6" height="7" fill="#1C1E26"/>
+    <!-- Right eye -->
+    <rect x="207" y="47" width="6" height="7" fill="#1C1E26"/>
+    <!-- Left arm -->
+    <rect class="main-left-arm" x="169" y="48" width="8" height="5" fill="#E07C4C"/>
+    <!-- Right arm -->
+    <rect class="main-right-arm" x="223" y="48" width="8" height="5" fill="#E07C4C"/>
+    <!-- Left leg -->
+    <rect x="185" y="65" width="8" height="10" fill="#E07C4C"/>
+    <!-- Right leg -->
+    <rect x="207" y="65" width="8" height="10" fill="#E07C4C"/>
+  </g>
+
+  <!-- ======================== -->
+  <!-- SUBAGENT 1: explore      -->
+  <!-- ======================== -->
+  <ellipse class="sub-shadow-1" cx="60" cy="152" rx="12" ry="2" fill="#000"/>
+  <g class="sub-1">
+    <!-- Ears -->
+    <rect x="51" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="65" y="120" width="4" height="6" fill="#E8A070"/>
+    <!-- Shoulder -->
+    <rect x="50" y="126" width="20" height="2" fill="#E8A070"/>
+    <!-- Body -->
+    <rect x="48" y="128" width="24" height="12" fill="#E8A070"/>
+    <!-- Eyes -->
+    <rect x="53" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="63" y="131" width="4" height="4" fill="#1C1E26"/>
+    <!-- Arms -->
+    <rect x="43" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="72" y="132" width="5" height="3" fill="#E8A070"/>
+    <!-- Legs -->
+    <rect x="53" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="62" y="140" width="5" height="7" fill="#E8A070"/>
+    <!-- Status dot -->
+    <circle class="status-dot sd-1" cx="76" cy="123" r="2.5" fill="#50FA7B"/>
+  </g>
+  <text x="60" y="158" class="label">explore</text>
+
+  <!-- ======================== -->
+  <!-- SUBAGENT 2: plan         -->
+  <!-- ======================== -->
+  <ellipse class="sub-shadow-2" cx="130" cy="152" rx="12" ry="2" fill="#000"/>
+  <g class="sub-2">
+    <rect x="121" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="135" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="120" y="126" width="20" height="2" fill="#E8A070"/>
+    <rect x="118" y="128" width="24" height="12" fill="#E8A070"/>
+    <rect x="123" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="133" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="113" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="142" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="123" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="132" y="140" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-2" cx="146" cy="123" r="2.5" fill="#50FA7B"/>
+  </g>
+  <text x="130" y="158" class="label">plan</text>
+
+  <!-- ======================== -->
+  <!-- SUBAGENT 3: code         -->
+  <!-- ======================== -->
+  <ellipse class="sub-shadow-3" cx="200" cy="152" rx="12" ry="2" fill="#000"/>
+  <g class="sub-3">
+    <rect x="191" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="205" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="190" y="126" width="20" height="2" fill="#E8A070"/>
+    <rect x="188" y="128" width="24" height="12" fill="#E8A070"/>
+    <rect x="193" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="203" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="183" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="212" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="193" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="202" y="140" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-3" cx="216" cy="123" r="2.5" fill="#50FA7B"/>
+  </g>
+  <text x="200" y="158" class="label">code</text>
+
+  <!-- ======================== -->
+  <!-- SUBAGENT 4: test         -->
+  <!-- ======================== -->
+  <ellipse class="sub-shadow-4" cx="270" cy="152" rx="12" ry="2" fill="#000"/>
+  <g class="sub-4">
+    <rect x="261" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="275" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="260" y="126" width="20" height="2" fill="#E8A070"/>
+    <rect x="258" y="128" width="24" height="12" fill="#E8A070"/>
+    <rect x="263" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="273" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="253" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="282" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="263" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="272" y="140" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-4" cx="286" cy="123" r="2.5" fill="#50FA7B"/>
+  </g>
+  <text x="270" y="158" class="label">test</text>
+
+  <!-- ======================== -->
+  <!-- SUBAGENT 5: review       -->
+  <!-- ======================== -->
+  <ellipse class="sub-shadow-5" cx="340" cy="152" rx="12" ry="2" fill="#000"/>
+  <g class="sub-5">
+    <rect x="331" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="345" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="330" y="126" width="20" height="2" fill="#E8A070"/>
+    <rect x="328" y="128" width="24" height="12" fill="#E8A070"/>
+    <rect x="333" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="343" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="323" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="352" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="333" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="342" y="140" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-5" cx="356" cy="123" r="2.5" fill="#50FA7B"/>
+  </g>
+  <text x="340" y="158" class="label">review</text>
+
+</svg>
