@@ -11,16 +11,16 @@
     }
     @keyframes wave-left {
       0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-25deg); }
+      50% { transform: rotate(-8deg); }
     }
     @keyframes wave-right {
       0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(25deg); }
+      50% { transform: rotate(8deg); }
     }
     @keyframes ear-bounce {
       0%, 100% { transform: scaleY(1); }
-      40% { transform: scaleY(1.2); }
-      60% { transform: scaleY(0.85); }
+      40% { transform: scaleY(1.08); }
+      60% { transform: scaleY(0.95); }
     }
 
     /* Subagent bounce (smaller) */
@@ -140,15 +140,15 @@
   <circle cx="32" cy="13" r="4" fill="#FFBD2E"/>
   <circle cx="46" cy="13" r="4" fill="#28CA42"/>
 
-  <!-- Centered: ghost icon + "Ghostty" title -->
-  <g transform="translate(191, 6)">
-    <!-- Tiny ghost silhouette -->
-    <rect x="0" y="2" width="10" height="6" rx="3" fill="#6C7086"/>
-    <rect x="1" y="7" width="2" height="2" fill="#6C7086"/>
-    <rect x="4" y="7" width="2" height="2" fill="#6C7086"/>
-    <rect x="7" y="7" width="2" height="2" fill="#6C7086"/>
+  <!-- Centered: ghost icon + "Ghostty" title (matching title bar style) -->
+  <g transform="translate(178, 5)">
+    <!-- Ghost dome (rounded top) -->
+    <path d="M3,7 Q3,2 7,2 Q11,2 11,7 L11,11 L9,10 L7,11 L5,10 L3,11 Z" fill="#6C7086"/>
+    <!-- Ghost eyes -->
+    <circle cx="5.5" cy="6" r="1" fill="#282A36"/>
+    <circle cx="8.5" cy="6" r="1" fill="#282A36"/>
   </g>
-  <text x="214" y="15" class="title-text">Ghostty</text>
+  <text x="200" y="15" class="title-text">Ghostty</text>
 
   <!-- ======================== -->
   <!-- CONNECTION LINES         -->
