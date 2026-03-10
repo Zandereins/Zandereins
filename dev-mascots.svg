@@ -191,12 +191,14 @@
         Z"
         fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
-      <!-- Face: rectangular eye cutouts (original Ghostty style) -->
+      <!-- Face: >_ terminal prompt (original Ghostty logo) -->
       <g class="ghostty-face">
-        <!-- Left eye -->
-        <rect x="146" y="36" width="10" height="12" fill="#000"/>
-        <!-- Right eye -->
-        <rect x="172" y="36" width="10" height="12" fill="#000"/>
+        <!-- > chevron (left side) -->
+        <rect x="148" y="36" width="4" height="4" fill="#000"/>
+        <rect x="152" y="40" width="4" height="4" fill="#000"/>
+        <rect x="148" y="44" width="4" height="4" fill="#000"/>
+        <!-- _ underscore bar (right side) -->
+        <rect x="166" y="44" width="16" height="4" fill="#000"/>
       </g>
     </g>
   </g>
