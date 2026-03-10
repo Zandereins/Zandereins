@@ -191,12 +191,12 @@
         Z"
         fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
-      <!-- Face: >_ terminal prompt (matching original Ghostty logo from ghostty.org) -->
+      <!-- Face: >_ terminal prompt (proportions from ghostty-org/website/ghostty-logo.svg) -->
       <g class="ghostty-face">
-        <!-- > chevron: smooth filled triangle like original -->
-        <polygon points="145,34 157,41 145,48" fill="#23272F"/>
-        <!-- _ underscore bar: wide rounded rect like original -->
-        <rect x="162" y="38.5" width="16" height="5" rx="1.5" fill="#23272F"/>
+        <!-- > chevron: filled triangle, 15px wide x 16px tall -->
+        <polygon points="144,33 159,41 144,49" fill="#23272F"/>
+        <!-- _ underscore: pill shape, 19px wide x 6px tall -->
+        <rect x="165" y="38" width="19" height="6" rx="2.5" fill="#23272F"/>
       </g>
     </g>
   </g>
