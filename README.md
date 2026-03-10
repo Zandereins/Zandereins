@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="dev-mascots.svg" alt="Claude Code and Ghostty mascots bouncing together" width="280" height="126">
+  <img src="dev-mascots.svg" alt="Claude Code orchestrating subagents in Ghostty terminal" width="480" height="216">
 </p>
 
 <h1 align="center">Hey, I'm Franz</h1>

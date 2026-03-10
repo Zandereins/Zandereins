@@ -1,18 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 100" width="280" height="126">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="480" height="216">
   <style>
-    /* === Shared Bounce === */
+    /* === Animations === */
+
+    /* Claude main agent bounce */
     @keyframes jump {
       0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
-      30% { transform: translateY(-16px) scaleY(1.1) scaleX(0.95); }
-      50% { transform: translateY(-18px) scaleY(1.05) scaleX(0.98); }
-      80% { transform: translateY(-5px) scaleY(0.95) scaleX(1.05); }
+      30% { transform: translateY(-10px) scaleY(1.08) scaleX(0.96); }
+      50% { transform: translateY(-12px) scaleY(1.04) scaleX(0.98); }
+      80% { transform: translateY(-3px) scaleY(0.96) scaleX(1.04); }
     }
-    @keyframes shadow-scale {
-      0%, 100% { transform: scaleX(1); opacity: 0.25; }
-      50% { transform: scaleX(0.4); opacity: 0.08; }
-    }
-
-    /* === Claude Animations === */
     @keyframes wave-left {
       0%, 100% { transform: rotate(0deg); }
       50% { transform: rotate(-25deg); }
@@ -27,238 +23,240 @@
       60% { transform: scaleY(0.85); }
     }
 
-    /* === Ghostty: Gentle float === */
-    @keyframes ghost-float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-4px); }
+    /* Subagent bounce (smaller) */
+    @keyframes sub-jump {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
-    /* === Ghostty: Smooth continuous Y-axis rotation === */
-    @keyframes ghost-spin {
-      0%   { transform: scaleX(1); }
-      25%  { transform: scaleX(0.15); }
-      50%  { transform: scaleX(1); }
-      75%  { transform: scaleX(0.15); }
-      100% { transform: scaleX(1); }
+    /* Connection line dash flow */
+    @keyframes dash-flow {
+      0% { stroke-dashoffset: 16; }
+      100% { stroke-dashoffset: 0; }
     }
 
-    /* === Ghostty: Face fade during rotation === */
-    @keyframes ghost-face {
-      0%   { opacity: 1; }
-      20%  { opacity: 0; }
-      30%  { opacity: 0; }
-      50%  { opacity: 1; }
-      70%  { opacity: 0; }
-      80%  { opacity: 0; }
-      100% { opacity: 1; }
+    /* Status dot pulse */
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
     }
 
-    @keyframes ghost-tentacle-sway {
-      0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(2px); }
-      75% { transform: translateX(-2px); }
+    /* === Main Agent === */
+    .claude-main {
+      animation: jump 0.7s ease-in-out infinite;
+      transform-origin: 200px 62px;
     }
-
-    /* === Claude Body === */
-    .claude-body {
-      animation: jump 0.5s ease-in-out infinite;
-      transform-origin: 50px 82px;
-    }
-    .claude-shadow {
-      animation: shadow-scale 0.5s ease-in-out infinite;
-      transform-origin: 50px 92px;
-    }
-    .left-arm {
-      animation: wave-left 0.5s ease-in-out infinite;
+    .main-left-arm {
+      animation: wave-left 0.7s ease-in-out infinite;
       transform-origin: right center;
     }
-    .right-arm {
-      animation: wave-right 0.5s ease-in-out infinite 0.04s;
+    .main-right-arm {
+      animation: wave-right 0.7s ease-in-out infinite 0.05s;
       transform-origin: left center;
     }
-    .left-ear {
-      animation: ear-bounce 0.5s ease-in-out infinite;
+    .main-left-ear {
+      animation: ear-bounce 0.7s ease-in-out infinite;
       transform-origin: center bottom;
     }
-    .right-ear {
-      animation: ear-bounce 0.5s ease-in-out infinite 0.1s;
+    .main-right-ear {
+      animation: ear-bounce 0.7s ease-in-out infinite 0.1s;
       transform-origin: center bottom;
     }
 
-    /* === Ghostty Body === */
-    .ghostty-body {
-      animation: ghost-float 3s ease-in-out infinite;
-      transform-origin: 164px 82px;
-    }
-    .ghostty-spin {
-      animation: ghost-spin 7s ease-in-out infinite;
-      transform-origin: 164px 50px;
-    }
-    .ghostty-shadow {
-      animation: shadow-scale 3s ease-in-out infinite;
-      transform-origin: 164px 92px;
-    }
-    .ghostty-tentacles {
-      animation: ghost-tentacle-sway 2.3s ease-in-out infinite;
-      transform-origin: center top;
-    }
-    .ghostty-face {
-      animation: ghost-face 7s ease-in-out infinite;
+    /* === Subagents === */
+    .sub-1 { animation: sub-jump 0.6s ease-in-out infinite; transform-origin: 60px 140px; }
+    .sub-2 { animation: sub-jump 0.6s ease-in-out infinite 0.12s; transform-origin: 130px 140px; }
+    .sub-3 { animation: sub-jump 0.6s ease-in-out infinite 0.24s; transform-origin: 200px 140px; }
+    .sub-4 { animation: sub-jump 0.6s ease-in-out infinite 0.36s; transform-origin: 270px 140px; }
+    .sub-5 { animation: sub-jump 0.6s ease-in-out infinite 0.48s; transform-origin: 340px 140px; }
+
+    /* === Connections === */
+    .connection-line {
+      stroke: #4A9EFF;
+      stroke-width: 1.2;
+      stroke-dasharray: 4 4;
+      animation: dash-flow 0.8s linear infinite;
+      opacity: 0.6;
     }
 
-    /* === Ghostty: 3-expression eye cycle (8s loop) ===
-       0-30%:  oval eyes open
-       30-33%: blink (close)
-       33-60%: oval eyes open again
-       60-63%: blink (close)
-       63-90%: >_ terminal eyes
-       90-93%: blink (close)
-       93-100%: oval eyes (loop restart) */
-    @keyframes expr-oval {
-      0%   { opacity: 1; }
-      30%  { opacity: 1; }
-      31%  { opacity: 0; }
-      33%  { opacity: 0; }
-      34%  { opacity: 1; }
-      60%  { opacity: 1; }
-      61%  { opacity: 0; }
-      93%  { opacity: 0; }
-      94%  { opacity: 1; }
-      100% { opacity: 1; }
+    /* === Status Dots === */
+    .status-dot {
+      animation: pulse-dot 1.5s ease-in-out infinite;
     }
-    @keyframes expr-terminal {
-      0%   { opacity: 0; }
-      63%  { opacity: 0; }
-      64%  { opacity: 1; }
-      90%  { opacity: 1; }
-      91%  { opacity: 0; }
-      100% { opacity: 0; }
+    .sd-2 { animation-delay: 0.3s; }
+    .sd-3 { animation-delay: 0.6s; }
+    .sd-4 { animation-delay: 0.9s; }
+    .sd-5 { animation-delay: 1.2s; }
+
+    /* === Labels === */
+    .label {
+      font-family: monospace, 'Courier New';
+      font-size: 7px;
+      fill: #50FA7B;
+      text-anchor: middle;
+      opacity: 0.8;
     }
-    @keyframes expr-blink-line {
-      0%   { opacity: 0; }
-      30.5% { opacity: 0; }
-      31%  { opacity: 1; }
-      33%  { opacity: 1; }
-      33.5% { opacity: 0; }
-      60.5% { opacity: 0; }
-      61%  { opacity: 1; }
-      63%  { opacity: 1; }
-      63.5% { opacity: 0; }
-      90.5% { opacity: 0; }
-      91%  { opacity: 1; }
-      93%  { opacity: 1; }
-      93.5% { opacity: 0; }
-      100% { opacity: 0; }
+    .title-text {
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 9px;
+      fill: #8B8F96;
     }
-    .expr-open     { animation: expr-oval 8s ease infinite; }
-    .expr-terminal { animation: expr-terminal 8s ease infinite; }
-    .expr-blink    { animation: expr-blink-line 8s ease infinite; }
   </style>
 
-  <!-- ==================== -->
-  <!-- CHARACTER 1: CLAUDE  -->
-  <!-- ==================== -->
+  <!-- ======================== -->
+  <!-- TERMINAL WINDOW (GHOSTTY) -->
+  <!-- ======================== -->
 
-  <!-- Shadow -->
-  <ellipse class="claude-shadow" cx="50" cy="92" rx="22" ry="5" fill="#000"/>
+  <!-- Window background -->
+  <rect x="2" y="2" width="396" height="176" rx="8" fill="#1C1E26" stroke="#3A3D4A" stroke-width="1"/>
 
-  <!-- Claude Character -->
-  <g class="claude-body">
+  <!-- Title bar background -->
+  <rect x="2" y="2" width="396" height="22" rx="8" fill="#282A36"/>
+  <rect x="2" y="16" width="396" height="8" fill="#282A36"/>
+
+  <!-- Traffic light dots -->
+  <circle cx="18" cy="13" r="4.5" fill="#FF5F57"/>
+  <circle cx="32" cy="13" r="4.5" fill="#FFBD2E"/>
+  <circle cx="46" cy="13" r="4.5" fill="#28CA42"/>
+
+  <!-- Ghostty mini ghost icon (simplified) -->
+  <g transform="translate(175, 6)">
+    <!-- Tiny ghost body -->
+    <rect x="0" y="2" width="10" height="6" rx="3" fill="#E8EAED"/>
+    <rect x="1" y="7" width="2" height="3" fill="#E8EAED"/>
+    <rect x="4" y="7" width="2" height="3" fill="#E8EAED"/>
+    <rect x="7" y="7" width="2" height="3" fill="#E8EAED"/>
+    <!-- Tiny eyes -->
+    <circle cx="3.5" cy="5" r="1" fill="#1C1E26"/>
+    <circle cx="7" cy="5" r="1" fill="#1C1E26"/>
+  </g>
+  <text x="190" y="15" class="title-text">Ghostty</text>
+
+  <!-- ======================== -->
+  <!-- CONNECTION LINES         -->
+  <!-- ======================== -->
+  <g class="connections">
+    <line class="connection-line" x1="200" y1="80" x2="60" y2="122"/>
+    <line class="connection-line" x1="200" y1="80" x2="130" y2="122"/>
+    <line class="connection-line" x1="200" y1="80" x2="200" y2="122"/>
+    <line class="connection-line" x1="200" y1="80" x2="270" y2="122"/>
+    <line class="connection-line" x1="200" y1="80" x2="340" y2="122"/>
+  </g>
+
+  <!-- ======================== -->
+  <!-- CLAUDE CODE — MAIN AGENT -->
+  <!-- ======================== -->
+  <g class="claude-main">
     <!-- Left ear -->
-    <rect class="left-ear" x="22" y="16" width="8" height="16" fill="#E07C4C"/>
+    <rect class="main-left-ear" x="181" y="30" width="5" height="10" fill="#E07C4C"/>
     <!-- Right ear -->
-    <rect class="right-ear" x="70" y="16" width="8" height="16" fill="#E07C4C"/>
-    <!-- Body top (narrower) -->
-    <rect x="18" y="32" width="64" height="4" fill="#E07C4C"/>
+    <rect class="main-right-ear" x="214" y="30" width="5" height="10" fill="#E07C4C"/>
+    <!-- Body top -->
+    <rect x="179" y="40" width="42" height="3" fill="#E07C4C"/>
     <!-- Body main -->
-    <rect x="14" y="36" width="72" height="32" fill="#E07C4C"/>
+    <rect x="176" y="43" width="48" height="22" fill="#E07C4C"/>
     <!-- Left eye -->
-    <rect x="30" y="42" width="8" height="10" fill="#000000"/>
+    <rect x="186" y="47" width="6" height="7" fill="#000"/>
     <!-- Right eye -->
-    <rect x="62" y="42" width="8" height="10" fill="#000000"/>
+    <rect x="208" y="47" width="6" height="7" fill="#000"/>
     <!-- Left arm -->
-    <rect class="left-arm" x="2" y="44" width="12" height="8" fill="#E07C4C"/>
+    <rect class="main-left-arm" x="168" y="48" width="8" height="5" fill="#E07C4C"/>
     <!-- Right arm -->
-    <rect class="right-arm" x="86" y="44" width="12" height="8" fill="#E07C4C"/>
+    <rect class="main-right-arm" x="224" y="48" width="8" height="5" fill="#E07C4C"/>
     <!-- Left leg -->
-    <rect x="24" y="68" width="12" height="14" fill="#E07C4C"/>
+    <rect x="184" y="65" width="8" height="10" fill="#E07C4C"/>
     <!-- Right leg -->
-    <rect x="64" y="68" width="12" height="14" fill="#E07C4C"/>
+    <rect x="208" y="65" width="8" height="10" fill="#E07C4C"/>
   </g>
 
-  <!-- ==================== -->
-  <!-- CHARACTER 2: GHOSTTY -->
-  <!-- ==================== -->
-
-  <!-- Shadow -->
-  <ellipse class="ghostty-shadow" cx="164" cy="92" rx="24" ry="5" fill="#000"/>
-
-  <!-- Ghostty Character -->
-  <g class="ghostty-body">
-    <g class="ghostty-spin">
-      <!-- Dome row 1 -->
-      <rect x="152" y="16" width="24" height="4" fill="#E8EAED"/>
-      <!-- Dome row 2 -->
-      <rect x="148" y="20" width="32" height="4" fill="#E8EAED"/>
-      <!-- Dome row 3 -->
-      <rect x="144" y="24" width="40" height="4" fill="#E8EAED"/>
-      <!-- Dome row 4 -->
-      <rect x="140" y="28" width="48" height="4" fill="#E8EAED"/>
-      <!-- Head -->
-      <rect x="136" y="32" width="56" height="12" fill="#E8EAED"/>
-      <!-- Body -->
-      <rect x="136" y="44" width="56" height="20" fill="#E8EAED"/>
-      <!-- Tentacles -->
-      <g class="ghostty-tentacles">
-        <rect x="136" y="64" width="12" height="10" fill="#E8EAED"/>
-        <rect x="152" y="64" width="12" height="16" fill="#E8EAED"/>
-        <rect x="168" y="64" width="12" height="10" fill="#E8EAED"/>
-        <rect x="184" y="64" width="8" height="16" fill="#E8EAED"/>
-      </g>
-
-      <!-- Ghost silhouette outline -->
-      <path d="
-        M152,16 h24
-        v4 h4
-        v4 h4
-        v4 h4
-        v4 h4
-        v32
-        v16 h-8 v-16
-        h-4
-        v10 h-12 v-10
-        h-4
-        v16 h-12 v-16
-        h-4
-        v10 h-12 v-10
-        v-32
-        h4 v-4
-        h4 v-4
-        h4 v-4
-        h4 v-4
-        Z"
-        fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
-
-      <!-- Face: 3 expressions cycling with blinks between them -->
-      <g class="ghostty-face">
-        <!-- Expression 1: Open oval eyes (default) -->
-        <g class="expr-open">
-          <ellipse cx="152" cy="41" rx="5" ry="6" fill="#23272F"/>
-          <ellipse cx="176" cy="41" rx="5" ry="6" fill="#23272F"/>
-        </g>
-        <!-- Expression 2: >_ terminal prompt eyes -->
-        <g class="expr-terminal" opacity="0">
-          <!-- > chevron (left) -->
-          <polygon points="148,36 157,41 148,46" fill="#23272F"/>
-          <!-- _ dash (right) -->
-          <rect x="168" y="39.5" width="14" height="4" rx="1.5" fill="#23272F"/>
-        </g>
-        <!-- Blink: two horizontal lines (between expressions) -->
-        <g class="expr-blink" opacity="0">
-          <rect x="147" y="40" width="10" height="3" rx="1" fill="#23272F"/>
-          <rect x="171" y="40" width="10" height="3" rx="1" fill="#23272F"/>
-        </g>
-      </g>
-    </g>
+  <!-- ======================== -->
+  <!-- SUBAGENT 1: explore      -->
+  <!-- ======================== -->
+  <g class="sub-1">
+    <rect x="50" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="65" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="49" y="129" width="22" height="2" fill="#E8A070"/>
+    <rect x="47" y="131" width="26" height="13" fill="#E8A070"/>
+    <rect x="52" y="134" width="4" height="4" fill="#000"/>
+    <rect x="64" y="134" width="4" height="4" fill="#000"/>
+    <rect x="42" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="73" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="52" y="144" width="5" height="7" fill="#E8A070"/>
+    <rect x="63" y="144" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-1" cx="76" cy="126" r="2.5" fill="#50FA7B"/>
   </g>
+  <text x="60" y="160" class="label">explore</text>
+
+  <!-- ======================== -->
+  <!-- SUBAGENT 2: plan         -->
+  <!-- ======================== -->
+  <g class="sub-2">
+    <rect x="120" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="135" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="119" y="129" width="22" height="2" fill="#E8A070"/>
+    <rect x="117" y="131" width="26" height="13" fill="#E8A070"/>
+    <rect x="122" y="134" width="4" height="4" fill="#000"/>
+    <rect x="134" y="134" width="4" height="4" fill="#000"/>
+    <rect x="112" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="143" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="122" y="144" width="5" height="7" fill="#E8A070"/>
+    <rect x="133" y="144" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-2" cx="146" cy="126" r="2.5" fill="#50FA7B"/>
+  </g>
+  <text x="130" y="160" class="label">plan</text>
+
+  <!-- ======================== -->
+  <!-- SUBAGENT 3: code         -->
+  <!-- ======================== -->
+  <g class="sub-3">
+    <rect x="190" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="205" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="189" y="129" width="22" height="2" fill="#E8A070"/>
+    <rect x="187" y="131" width="26" height="13" fill="#E8A070"/>
+    <rect x="192" y="134" width="4" height="4" fill="#000"/>
+    <rect x="204" y="134" width="4" height="4" fill="#000"/>
+    <rect x="182" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="213" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="192" y="144" width="5" height="7" fill="#E8A070"/>
+    <rect x="203" y="144" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-3" cx="216" cy="126" r="2.5" fill="#50FA7B"/>
+  </g>
+  <text x="200" y="160" class="label">code</text>
+
+  <!-- ======================== -->
+  <!-- SUBAGENT 4: test         -->
+  <!-- ======================== -->
+  <g class="sub-4">
+    <rect x="260" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="275" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="259" y="129" width="22" height="2" fill="#E8A070"/>
+    <rect x="257" y="131" width="26" height="13" fill="#E8A070"/>
+    <rect x="262" y="134" width="4" height="4" fill="#000"/>
+    <rect x="274" y="134" width="4" height="4" fill="#000"/>
+    <rect x="252" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="283" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="262" y="144" width="5" height="7" fill="#E8A070"/>
+    <rect x="273" y="144" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-4" cx="286" cy="126" r="2.5" fill="#50FA7B"/>
+  </g>
+  <text x="270" y="160" class="label">test</text>
+
+  <!-- ======================== -->
+  <!-- SUBAGENT 5: review       -->
+  <!-- ======================== -->
+  <g class="sub-5">
+    <rect x="330" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="345" y="122" width="5" height="7" fill="#E8A070"/>
+    <rect x="329" y="129" width="22" height="2" fill="#E8A070"/>
+    <rect x="327" y="131" width="26" height="13" fill="#E8A070"/>
+    <rect x="332" y="134" width="4" height="4" fill="#000"/>
+    <rect x="344" y="134" width="4" height="4" fill="#000"/>
+    <rect x="322" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="353" y="135" width="5" height="3" fill="#E8A070"/>
+    <rect x="332" y="144" width="5" height="7" fill="#E8A070"/>
+    <rect x="343" y="144" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-5" cx="356" cy="126" r="2.5" fill="#50FA7B"/>
+  </g>
+  <text x="340" y="160" class="label">review</text>
+
 </svg>
