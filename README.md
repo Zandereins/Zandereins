@@ -50,6 +50,7 @@ Structured workflows ensure AI-driven development produces reliable, auditable r
 | **lazygit** | TUI Git client — keyboard-driven version control |
 | **Wispr Flow** | Voice-to-text AI — speak commands, code and prompts |
 | **Claude Code** | Agentic IDE running in the adjacent pane |
+| **VS Code / Cursor / Antigravity** | IDEs for visual editing, debugging, and AI-assisted coding |
 | **Git Worktrees** | Parallel branch development without context switching |
 
 <details>
@@ -109,6 +110,9 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 ### Dev Environment
 ![Ghostty](https://img.shields.io/badge/Ghostty-Terminal-1C1E26?style=flat-square&logo=ghostty&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-IDE-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
+![Cursor](https://img.shields.io/badge/Cursor-AI_IDE-000000?style=flat-square&logo=cursor&logoColor=white)
+![Antigravity](https://img.shields.io/badge/Antigravity-AI_IDE-6C5CE7?style=flat-square)
 ![lazygit](https://img.shields.io/badge/lazygit-Git_TUI-F05032?style=flat-square&logo=git&logoColor=white)
 ![Git Worktrees](https://img.shields.io/badge/Git_Worktrees-Parallel_Dev-F05032?style=flat-square&logo=git&logoColor=white)
 ![Wispr Flow](https://img.shields.io/badge/Wispr_Flow-Voice--to--Text-6C5CE7?style=flat-square)
