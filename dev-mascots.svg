@@ -191,14 +191,14 @@
         Z"
         fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
-      <!-- Face: >_ terminal prompt (original Ghostty logo) -->
+      <!-- Face: >_ terminal prompt (matching original Ghostty logo proportions) -->
       <g class="ghostty-face">
-        <!-- > chevron (left side) -->
-        <rect x="148" y="36" width="4" height="4" fill="#000"/>
-        <rect x="152" y="40" width="4" height="4" fill="#000"/>
-        <rect x="148" y="44" width="4" height="4" fill="#000"/>
-        <!-- _ underscore bar (right side) -->
-        <rect x="166" y="44" width="16" height="4" fill="#000"/>
+        <!-- > chevron: 8px wide arms, 3 rows -->
+        <rect x="144" y="34" width="8" height="4" fill="#000"/>
+        <rect x="148" y="38" width="8" height="4" fill="#000"/>
+        <rect x="144" y="42" width="8" height="4" fill="#000"/>
+        <!-- _ horizontal bar: vertically centered with > point, 8px gap -->
+        <rect x="164" y="38" width="16" height="4" fill="#000"/>
       </g>
     </g>
   </g>
