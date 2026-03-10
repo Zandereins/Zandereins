@@ -26,7 +26,7 @@
     /* Subagent bounce (smaller) */
     @keyframes sub-jump {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
+      50% { transform: translateY(-5px); }
     }
 
     /* Connection line dash flow */
@@ -41,10 +41,24 @@
       50% { opacity: 1; }
     }
 
+    /* Shadow scale (synced with jump) */
+    @keyframes shadow-scale {
+      0%, 100% { transform: scaleX(1); opacity: 0.2; }
+      50% { transform: scaleX(0.5); opacity: 0.08; }
+    }
+    @keyframes sub-shadow-scale {
+      0%, 100% { transform: scaleX(1); opacity: 0.15; }
+      50% { transform: scaleX(0.6); opacity: 0.06; }
+    }
+
     /* === Main Agent === */
     .claude-main {
       animation: jump 0.7s ease-in-out infinite;
       transform-origin: 200px 62px;
+    }
+    .main-shadow {
+      animation: shadow-scale 0.7s ease-in-out infinite;
+      transform-origin: 200px 78px;
     }
     .main-left-arm {
       animation: wave-left 0.7s ease-in-out infinite;
@@ -70,19 +84,23 @@
     .sub-4 { animation: sub-jump 0.6s ease-in-out infinite 0.36s; transform-origin: 270px 140px; }
     .sub-5 { animation: sub-jump 0.6s ease-in-out infinite 0.48s; transform-origin: 340px 140px; }
 
+    .sub-shadow-1 { animation: sub-shadow-scale 0.6s ease-in-out infinite; transform-origin: 60px 152px; }
+    .sub-shadow-2 { animation: sub-shadow-scale 0.6s ease-in-out infinite 0.12s; transform-origin: 130px 152px; }
+    .sub-shadow-3 { animation: sub-shadow-scale 0.6s ease-in-out infinite 0.24s; transform-origin: 200px 152px; }
+    .sub-shadow-4 { animation: sub-shadow-scale 0.6s ease-in-out infinite 0.36s; transform-origin: 270px 152px; }
+    .sub-shadow-5 { animation: sub-shadow-scale 0.6s ease-in-out infinite 0.48s; transform-origin: 340px 152px; }
+
     /* === Connections === */
     .connection-line {
       stroke: #4A9EFF;
       stroke-width: 1.2;
       stroke-dasharray: 4 4;
       animation: dash-flow 0.8s linear infinite;
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     /* === Status Dots === */
-    .status-dot {
-      animation: pulse-dot 1.5s ease-in-out infinite;
-    }
+    .status-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
     .sd-2 { animation-delay: 0.3s; }
     .sd-3 { animation-delay: 0.6s; }
     .sd-4 { animation-delay: 0.9s; }
@@ -90,16 +108,17 @@
 
     /* === Labels === */
     .label {
-      font-family: monospace, 'Courier New';
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
       font-size: 7px;
       fill: #50FA7B;
       text-anchor: middle;
-      opacity: 0.8;
+      opacity: 0.7;
     }
     .title-text {
-      font-family: -apple-system, system-ui, sans-serif;
+      font-family: -apple-system, system-ui, 'Segoe UI', sans-serif;
       font-size: 9px;
-      fill: #8B8F96;
+      fill: #6C7086;
+      text-anchor: middle;
     }
   </style>
 
@@ -108,155 +127,170 @@
   <!-- ======================== -->
 
   <!-- Window background -->
-  <rect x="2" y="2" width="396" height="176" rx="8" fill="#1C1E26" stroke="#3A3D4A" stroke-width="1"/>
+  <rect x="2" y="2" width="396" height="176" rx="8" fill="#1C1E26" stroke="#313244" stroke-width="1"/>
 
-  <!-- Title bar background -->
+  <!-- Title bar -->
   <rect x="2" y="2" width="396" height="22" rx="8" fill="#282A36"/>
   <rect x="2" y="16" width="396" height="8" fill="#282A36"/>
+  <!-- Separator line -->
+  <line x1="2" y1="24" x2="398" y2="24" stroke="#313244" stroke-width="0.5"/>
 
   <!-- Traffic light dots -->
-  <circle cx="18" cy="13" r="4.5" fill="#FF5F57"/>
-  <circle cx="32" cy="13" r="4.5" fill="#FFBD2E"/>
-  <circle cx="46" cy="13" r="4.5" fill="#28CA42"/>
+  <circle cx="18" cy="13" r="4" fill="#FF5F57"/>
+  <circle cx="32" cy="13" r="4" fill="#FFBD2E"/>
+  <circle cx="46" cy="13" r="4" fill="#28CA42"/>
 
-  <!-- Ghostty mini ghost icon (simplified) -->
-  <g transform="translate(175, 6)">
-    <!-- Tiny ghost body -->
-    <rect x="0" y="2" width="10" height="6" rx="3" fill="#E8EAED"/>
-    <rect x="1" y="7" width="2" height="3" fill="#E8EAED"/>
-    <rect x="4" y="7" width="2" height="3" fill="#E8EAED"/>
-    <rect x="7" y="7" width="2" height="3" fill="#E8EAED"/>
-    <!-- Tiny eyes -->
-    <circle cx="3.5" cy="5" r="1" fill="#1C1E26"/>
-    <circle cx="7" cy="5" r="1" fill="#1C1E26"/>
+  <!-- Centered: ghost icon + "Ghostty" title -->
+  <g transform="translate(191, 6)">
+    <!-- Tiny ghost silhouette -->
+    <rect x="0" y="2" width="10" height="6" rx="3" fill="#6C7086"/>
+    <rect x="1" y="7" width="2" height="2" fill="#6C7086"/>
+    <rect x="4" y="7" width="2" height="2" fill="#6C7086"/>
+    <rect x="7" y="7" width="2" height="2" fill="#6C7086"/>
   </g>
-  <text x="190" y="15" class="title-text">Ghostty</text>
+  <text x="214" y="15" class="title-text">Ghostty</text>
 
   <!-- ======================== -->
   <!-- CONNECTION LINES         -->
   <!-- ======================== -->
   <g class="connections">
-    <line class="connection-line" x1="200" y1="80" x2="60" y2="122"/>
-    <line class="connection-line" x1="200" y1="80" x2="130" y2="122"/>
-    <line class="connection-line" x1="200" y1="80" x2="200" y2="122"/>
-    <line class="connection-line" x1="200" y1="80" x2="270" y2="122"/>
-    <line class="connection-line" x1="200" y1="80" x2="340" y2="122"/>
+    <line class="connection-line" x1="200" y1="76" x2="60" y2="120"/>
+    <line class="connection-line" x1="200" y1="76" x2="130" y2="120"/>
+    <line class="connection-line" x1="200" y1="76" x2="200" y2="120"/>
+    <line class="connection-line" x1="200" y1="76" x2="270" y2="120"/>
+    <line class="connection-line" x1="200" y1="76" x2="340" y2="120"/>
   </g>
 
   <!-- ======================== -->
   <!-- CLAUDE CODE — MAIN AGENT -->
   <!-- ======================== -->
+
+  <!-- Main agent shadow -->
+  <ellipse class="main-shadow" cx="200" cy="78" rx="18" ry="3" fill="#000"/>
+
   <g class="claude-main">
     <!-- Left ear -->
-    <rect class="main-left-ear" x="181" y="30" width="5" height="10" fill="#E07C4C"/>
+    <rect class="main-left-ear" x="182" y="30" width="6" height="10" fill="#E07C4C"/>
     <!-- Right ear -->
-    <rect class="main-right-ear" x="214" y="30" width="5" height="10" fill="#E07C4C"/>
-    <!-- Body top -->
-    <rect x="179" y="40" width="42" height="3" fill="#E07C4C"/>
+    <rect class="main-right-ear" x="212" y="30" width="6" height="10" fill="#E07C4C"/>
+    <!-- Body top (shoulder) -->
+    <rect x="180" y="40" width="40" height="3" fill="#E07C4C"/>
     <!-- Body main -->
-    <rect x="176" y="43" width="48" height="22" fill="#E07C4C"/>
+    <rect x="177" y="43" width="46" height="22" fill="#E07C4C"/>
     <!-- Left eye -->
-    <rect x="186" y="47" width="6" height="7" fill="#000"/>
+    <rect x="187" y="47" width="6" height="7" fill="#1C1E26"/>
     <!-- Right eye -->
-    <rect x="208" y="47" width="6" height="7" fill="#000"/>
+    <rect x="207" y="47" width="6" height="7" fill="#1C1E26"/>
     <!-- Left arm -->
-    <rect class="main-left-arm" x="168" y="48" width="8" height="5" fill="#E07C4C"/>
+    <rect class="main-left-arm" x="169" y="48" width="8" height="5" fill="#E07C4C"/>
     <!-- Right arm -->
-    <rect class="main-right-arm" x="224" y="48" width="8" height="5" fill="#E07C4C"/>
+    <rect class="main-right-arm" x="223" y="48" width="8" height="5" fill="#E07C4C"/>
     <!-- Left leg -->
-    <rect x="184" y="65" width="8" height="10" fill="#E07C4C"/>
+    <rect x="185" y="65" width="8" height="10" fill="#E07C4C"/>
     <!-- Right leg -->
-    <rect x="208" y="65" width="8" height="10" fill="#E07C4C"/>
+    <rect x="207" y="65" width="8" height="10" fill="#E07C4C"/>
   </g>
 
   <!-- ======================== -->
   <!-- SUBAGENT 1: explore      -->
   <!-- ======================== -->
+  <ellipse class="sub-shadow-1" cx="60" cy="152" rx="12" ry="2" fill="#000"/>
   <g class="sub-1">
-    <rect x="50" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="65" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="49" y="129" width="22" height="2" fill="#E8A070"/>
-    <rect x="47" y="131" width="26" height="13" fill="#E8A070"/>
-    <rect x="52" y="134" width="4" height="4" fill="#000"/>
-    <rect x="64" y="134" width="4" height="4" fill="#000"/>
-    <rect x="42" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="73" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="52" y="144" width="5" height="7" fill="#E8A070"/>
-    <rect x="63" y="144" width="5" height="7" fill="#E8A070"/>
-    <circle class="status-dot sd-1" cx="76" cy="126" r="2.5" fill="#50FA7B"/>
+    <!-- Ears -->
+    <rect x="51" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="65" y="120" width="4" height="6" fill="#E8A070"/>
+    <!-- Shoulder -->
+    <rect x="50" y="126" width="20" height="2" fill="#E8A070"/>
+    <!-- Body -->
+    <rect x="48" y="128" width="24" height="12" fill="#E8A070"/>
+    <!-- Eyes -->
+    <rect x="53" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="63" y="131" width="4" height="4" fill="#1C1E26"/>
+    <!-- Arms -->
+    <rect x="43" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="72" y="132" width="5" height="3" fill="#E8A070"/>
+    <!-- Legs -->
+    <rect x="53" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="62" y="140" width="5" height="7" fill="#E8A070"/>
+    <!-- Status dot -->
+    <circle class="status-dot sd-1" cx="76" cy="123" r="2.5" fill="#50FA7B"/>
   </g>
-  <text x="60" y="160" class="label">explore</text>
+  <text x="60" y="158" class="label">explore</text>
 
   <!-- ======================== -->
   <!-- SUBAGENT 2: plan         -->
   <!-- ======================== -->
+  <ellipse class="sub-shadow-2" cx="130" cy="152" rx="12" ry="2" fill="#000"/>
   <g class="sub-2">
-    <rect x="120" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="135" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="119" y="129" width="22" height="2" fill="#E8A070"/>
-    <rect x="117" y="131" width="26" height="13" fill="#E8A070"/>
-    <rect x="122" y="134" width="4" height="4" fill="#000"/>
-    <rect x="134" y="134" width="4" height="4" fill="#000"/>
-    <rect x="112" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="143" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="122" y="144" width="5" height="7" fill="#E8A070"/>
-    <rect x="133" y="144" width="5" height="7" fill="#E8A070"/>
-    <circle class="status-dot sd-2" cx="146" cy="126" r="2.5" fill="#50FA7B"/>
+    <rect x="121" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="135" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="120" y="126" width="20" height="2" fill="#E8A070"/>
+    <rect x="118" y="128" width="24" height="12" fill="#E8A070"/>
+    <rect x="123" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="133" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="113" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="142" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="123" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="132" y="140" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-2" cx="146" cy="123" r="2.5" fill="#50FA7B"/>
   </g>
-  <text x="130" y="160" class="label">plan</text>
+  <text x="130" y="158" class="label">plan</text>
 
   <!-- ======================== -->
   <!-- SUBAGENT 3: code         -->
   <!-- ======================== -->
+  <ellipse class="sub-shadow-3" cx="200" cy="152" rx="12" ry="2" fill="#000"/>
   <g class="sub-3">
-    <rect x="190" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="205" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="189" y="129" width="22" height="2" fill="#E8A070"/>
-    <rect x="187" y="131" width="26" height="13" fill="#E8A070"/>
-    <rect x="192" y="134" width="4" height="4" fill="#000"/>
-    <rect x="204" y="134" width="4" height="4" fill="#000"/>
-    <rect x="182" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="213" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="192" y="144" width="5" height="7" fill="#E8A070"/>
-    <rect x="203" y="144" width="5" height="7" fill="#E8A070"/>
-    <circle class="status-dot sd-3" cx="216" cy="126" r="2.5" fill="#50FA7B"/>
+    <rect x="191" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="205" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="190" y="126" width="20" height="2" fill="#E8A070"/>
+    <rect x="188" y="128" width="24" height="12" fill="#E8A070"/>
+    <rect x="193" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="203" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="183" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="212" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="193" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="202" y="140" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-3" cx="216" cy="123" r="2.5" fill="#50FA7B"/>
   </g>
-  <text x="200" y="160" class="label">code</text>
+  <text x="200" y="158" class="label">code</text>
 
   <!-- ======================== -->
   <!-- SUBAGENT 4: test         -->
   <!-- ======================== -->
+  <ellipse class="sub-shadow-4" cx="270" cy="152" rx="12" ry="2" fill="#000"/>
   <g class="sub-4">
-    <rect x="260" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="275" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="259" y="129" width="22" height="2" fill="#E8A070"/>
-    <rect x="257" y="131" width="26" height="13" fill="#E8A070"/>
-    <rect x="262" y="134" width="4" height="4" fill="#000"/>
-    <rect x="274" y="134" width="4" height="4" fill="#000"/>
-    <rect x="252" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="283" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="262" y="144" width="5" height="7" fill="#E8A070"/>
-    <rect x="273" y="144" width="5" height="7" fill="#E8A070"/>
-    <circle class="status-dot sd-4" cx="286" cy="126" r="2.5" fill="#50FA7B"/>
+    <rect x="261" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="275" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="260" y="126" width="20" height="2" fill="#E8A070"/>
+    <rect x="258" y="128" width="24" height="12" fill="#E8A070"/>
+    <rect x="263" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="273" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="253" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="282" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="263" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="272" y="140" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-4" cx="286" cy="123" r="2.5" fill="#50FA7B"/>
   </g>
-  <text x="270" y="160" class="label">test</text>
+  <text x="270" y="158" class="label">test</text>
 
   <!-- ======================== -->
   <!-- SUBAGENT 5: review       -->
   <!-- ======================== -->
+  <ellipse class="sub-shadow-5" cx="340" cy="152" rx="12" ry="2" fill="#000"/>
   <g class="sub-5">
-    <rect x="330" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="345" y="122" width="5" height="7" fill="#E8A070"/>
-    <rect x="329" y="129" width="22" height="2" fill="#E8A070"/>
-    <rect x="327" y="131" width="26" height="13" fill="#E8A070"/>
-    <rect x="332" y="134" width="4" height="4" fill="#000"/>
-    <rect x="344" y="134" width="4" height="4" fill="#000"/>
-    <rect x="322" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="353" y="135" width="5" height="3" fill="#E8A070"/>
-    <rect x="332" y="144" width="5" height="7" fill="#E8A070"/>
-    <rect x="343" y="144" width="5" height="7" fill="#E8A070"/>
-    <circle class="status-dot sd-5" cx="356" cy="126" r="2.5" fill="#50FA7B"/>
+    <rect x="331" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="345" y="120" width="4" height="6" fill="#E8A070"/>
+    <rect x="330" y="126" width="20" height="2" fill="#E8A070"/>
+    <rect x="328" y="128" width="24" height="12" fill="#E8A070"/>
+    <rect x="333" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="343" y="131" width="4" height="4" fill="#1C1E26"/>
+    <rect x="323" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="352" y="132" width="5" height="3" fill="#E8A070"/>
+    <rect x="333" y="140" width="5" height="7" fill="#E8A070"/>
+    <rect x="342" y="140" width="5" height="7" fill="#E8A070"/>
+    <circle class="status-dot sd-5" cx="356" cy="123" r="2.5" fill="#50FA7B"/>
   </g>
-  <text x="340" y="160" class="label">review</text>
+  <text x="340" y="158" class="label">review</text>
 
 </svg>
