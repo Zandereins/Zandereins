@@ -191,12 +191,12 @@
         Z"
         fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
-      <!-- Face: >_ terminal prompt (matching original Ghostty logo from ghostty.org) -->
-      <g class="ghostty-face">
-        <!-- > chevron: smooth filled triangle like original -->
-        <polygon points="145,34 157,41 145,48" fill="#23272F"/>
-        <!-- _ underscore bar: wide rounded rect like original -->
-        <rect x="162" y="38.5" width="16" height="5" rx="1.5" fill="#23272F"/>
+      <!-- Face: exact original paths from ghostty-org/website/ghostty-logo.svg, scaled to fit -->
+      <g class="ghostty-face" transform="translate(128.7, 6.25) scale(2.6)">
+        <!-- > chevron with rounded ends (original path) -->
+        <path d="M11.2808 12.4366L7.3494 10.1673C6.83833 9.87192 6.18192 10.0477 5.88654 10.5588C5.59115 11.0699 5.76698 11.7263 6.27804 12.0217L8.60361 13.365L6.27804 14.7083C5.76698 15.0036 5.59115 15.6577 5.88654 16.1711C6.18192 16.6822 6.83599 16.858 7.3494 16.5626L11.2808 14.2933C11.9935 13.8807 11.9935 12.8516 11.2808 12.4389V12.4366Z" fill="#23272F"/>
+        <!-- - dash pill shape with rounded ends (original path) -->
+        <path d="M20.1822 12.2913H15.0176C14.4269 12.2913 13.9463 12.7695 13.9463 13.3626C13.9463 13.9557 14.4245 14.434 15.0176 14.434H20.1822C20.773 14.434 21.2535 13.9557 21.2535 13.3626C21.2535 12.7695 20.7753 12.2913 20.1822 12.2913Z" fill="#23272F"/>
       </g>
     </g>
   </g>
