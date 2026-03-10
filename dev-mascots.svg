@@ -191,14 +191,12 @@
         Z"
         fill="none" stroke="#B0B8C0" stroke-width="1" stroke-linejoin="miter"/>
 
-      <!-- Face: > - terminal prompt (Ghostty logo) -->
+      <!-- Face: >_ terminal prompt (matching original Ghostty logo from ghostty.org) -->
       <g class="ghostty-face">
-        <!-- > chevron: compact 4px blocks -->
-        <rect x="150" y="35" width="4" height="4" fill="#23272F"/>
-        <rect x="154" y="39" width="4" height="4" fill="#23272F"/>
-        <rect x="150" y="43" width="4" height="4" fill="#23272F"/>
-        <!-- - dash: same height as > midpoint -->
-        <rect x="162" y="39" width="8" height="4" fill="#23272F"/>
+        <!-- > chevron: smooth filled triangle like original -->
+        <polygon points="145,34 157,41 145,48" fill="#23272F"/>
+        <!-- _ underscore bar: wide rounded rect like original -->
+        <rect x="162" y="38.5" width="16" height="5" rx="1.5" fill="#23272F"/>
       </g>
     </g>
   </g>
