@@ -30,6 +30,7 @@
 - 🖥️ **Mission-Control** — Operations dashboard that gives full visibility into agent state, task pipelines, server health, and deployment status — one tab instead of five terminals
 - 🛡️ **ShieldClaw** — Open-source prompt injection defense (71 patterns, 4 active hooks, zero token overhead) that protects AI agents from adversarial inputs in production
 - 🔧 **OpenClaw Skills** — Reusable agent capabilities for the OpenClaw ecosystem
+- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Autonomous skill improvement engine using the Karpathy autoresearch loop — analyzes, benchmarks, and iteratively improves Claude Code skills with 6 measurable quality dimensions
 
 ## Engineering Approach
 
@@ -82,6 +83,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 ![ShieldClaw](https://img.shields.io/badge/ShieldClaw-Prompt_Injection_Defense-DC2626?style=flat-square)
 ![QMD-CLI](https://img.shields.io/badge/QMD--CLI-Semantic_Memory_Search-7C3AED?style=flat-square)
+![SkillForge](https://img.shields.io/badge/SkillForge-Autoresearch_Skill_Optimizer-F59E0B?style=flat-square)
 
 </details>
 
@@ -135,6 +137,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 |------|-------------|
 | 🖥️ [openclaw-mission-control](https://github.com/Zandereins/openclaw-mission-control) | Operations dashboard for AI agent infrastructure — Kanban, live status, task delegation, monitoring |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 patterns, 133 tests, MIT licensed |
+| 🔨 [skillforge](https://github.com/Zandereins/skillforge) | Autonomous skill improvement engine — autoresearch loop for Claude Code skills, 6 quality dimensions, structural linter, Python scorer |
 
 ## Background
 
