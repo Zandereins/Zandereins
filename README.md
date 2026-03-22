@@ -13,6 +13,12 @@
   From LLM orchestration and fullstack web apps to secure infrastructure, with an enterprise IT background.
 </p>
 
+<p align="center">
+  <a href="https://github.com/Zandereins/skillforge"><img src="https://img.shields.io/badge/SkillForge-98.9%2F100_%5BS%5D-brightgreen" alt="SkillForge: 98.9 [S]"></a>
+  <a href="https://github.com/Zandereins/openclaw-skill-shieldclaw"><img src="https://img.shields.io/badge/ShieldClaw-71_Patterns-DC2626" alt="ShieldClaw"></a>
+  <a href="https://linkedin.com/in/franz-paul-016938258/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+</p>
+
 ---
 
 ## What I Deliver
@@ -30,7 +36,7 @@
 - 🖥️ **Mission-Control** — Operations dashboard that gives full visibility into agent state, task pipelines, server health, and deployment status — one tab instead of five terminals
 - 🛡️ **ShieldClaw** — Open-source prompt injection defense (71 patterns, 4 active hooks, zero token overhead) that protects AI agents from adversarial inputs in production
 - 🔧 **OpenClaw Skills** — Reusable agent capabilities for the OpenClaw ecosystem
-- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Self-evolving skill engine for Claude Code — text gradients for directed fixes, multi-skill mesh conflict detection, meta-learning data flywheel, failure triage. Your 50th skill ships in half the iterations of your 1st (v4.0, 99.4/100 structural score, 51 tests)
+- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Autonomous skill improvement engine for Claude Code — stemming tokenizer, beam search, MinHash/LSH mesh analysis, EMA plateau detection, episodic TF-IDF memory, context-aware patches, doctor command. 60–70% of fixes are fully deterministic, no LLM needed (v5.1, 98.9/100 structural score, 99 tests passing)
 
 ## Engineering Approach
 
@@ -83,7 +89,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 ![ShieldClaw](https://img.shields.io/badge/ShieldClaw-Prompt_Injection_Defense-DC2626?style=flat-square)
 ![QMD-CLI](https://img.shields.io/badge/QMD--CLI-Semantic_Memory_Search-7C3AED?style=flat-square)
-![SkillForge](https://img.shields.io/badge/SkillForge_v4-Self--Evolving_Skill_Engine-F59E0B?style=flat-square)
+![SkillForge](https://img.shields.io/badge/SkillForge_v5.1-Autonomous_Skill_Engine-F59E0B?style=flat-square)
 
 </details>
 
@@ -137,7 +143,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 |------|-------------|
 | 🖥️ [openclaw-mission-control](https://github.com/Zandereins/openclaw-mission-control) | Operations dashboard for AI agent infrastructure — Kanban, live status, task delegation, monitoring |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 patterns, 133 tests, MIT licensed |
-| 🔨 [skillforge](https://github.com/Zandereins/skillforge) | Self-evolving skill engine — text gradients, skill mesh, meta-learning, failure triage. Autoresearch loop meets compounding intelligence (v4.0) |
+| 🔨 [skillforge](https://github.com/Zandereins/skillforge) | Autonomous skill improvement engine — 7-dimension scorer, beam search, MinHash/LSH mesh, EMA stopping, episodic memory, doctor command. 62.5 → 98.9 structural points, zero human input (v5.1) |
 
 ## Background
 
