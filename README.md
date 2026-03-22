@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Zandereins/skillforge"><img src="https://img.shields.io/badge/SkillForge-98.9%2F100_%5BS%5D-brightgreen" alt="SkillForge: 98.9 [S]"></a>
+  <a href="https://github.com/Zandereins/skillforge"><img src="https://img.shields.io/badge/SkillForge-99.9%2F100_%5BS%5D-brightgreen" alt="SkillForge: 98.9 [S]"></a>
   <a href="https://github.com/Zandereins/openclaw-skill-shieldclaw"><img src="https://img.shields.io/badge/ShieldClaw-71_Patterns-DC2626" alt="ShieldClaw"></a>
   <a href="https://linkedin.com/in/franz-paul-016938258/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 </p>
@@ -36,7 +36,7 @@
 - 🖥️ **Mission-Control** — Operations dashboard that gives full visibility into agent state, task pipelines, server health, and deployment status — one tab instead of five terminals
 - 🛡️ **ShieldClaw** — Open-source prompt injection defense (71 patterns, 4 active hooks, zero token overhead) that protects AI agents from adversarial inputs in production
 - 🔧 **OpenClaw Skills** — Reusable agent capabilities for the OpenClaw ecosystem
-- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Autonomous skill improvement engine for Claude Code — stemming tokenizer, beam search, MinHash/LSH mesh analysis, EMA plateau detection, episodic TF-IDF memory, context-aware patches, doctor command. 60–70% of fixes are fully deterministic, no LLM needed (v5.1, 98.9/100 structural score, 99 tests passing)
+- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Autonomous skill improvement engine for Claude Code — stemming tokenizer, beam search, MinHash/LSH mesh analysis, EMA plateau detection, episodic TF-IDF memory, context-aware patches, doctor command. 60–70% of fixes are fully deterministic, no LLM needed (v5.1, 99.9/100 structural score, 99 tests passing)
 
 ## Engineering Approach
 
