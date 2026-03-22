@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Zandereins/skillforge"><img src="https://img.shields.io/badge/SkillForge-99.9%2F100_%5BS%5D-brightgreen" alt="SkillForge: 98.9 [S]"></a>
+  <a href="https://github.com/Zandereins/skillforge"><img src="https://img.shields.io/badge/SkillForge-99.9%2F100_%5BS%5D-brightgreen" alt="SkillForge: 99.9 [S]"></a>
   <a href="https://github.com/Zandereins/openclaw-skill-shieldclaw"><img src="https://img.shields.io/badge/ShieldClaw-71_Patterns-DC2626" alt="ShieldClaw"></a>
   <a href="https://linkedin.com/in/franz-paul-016938258/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 </p>
@@ -36,7 +36,7 @@
 - 🖥️ **Mission-Control** — Operations dashboard that gives full visibility into agent state, task pipelines, server health, and deployment status — one tab instead of five terminals
 - 🛡️ **ShieldClaw** — Open-source prompt injection defense (71 patterns, 4 active hooks, zero token overhead) that protects AI agents from adversarial inputs in production
 - 🔧 **OpenClaw Skills** — Reusable agent capabilities for the OpenClaw ecosystem
-- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Autonomous skill improvement engine for Claude Code — stemming tokenizer, beam search, MinHash/LSH mesh analysis, EMA plateau detection, episodic TF-IDF memory, context-aware patches, doctor command. 60–70% of fixes are fully deterministic, no LLM needed (v5.1, 99.9/100 structural score, 99 tests passing)
+- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Stop manually auditing Claude Code skills. SkillForge applies deterministic patches, scores across 6 dimensions, and stops when ROI drops — zero human input. Ships with one-line installer, demo skill, and doctor command for fleet health checks (v5.1, 99.9/100, 99 tests)
 
 ## Engineering Approach
 
@@ -143,7 +143,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 |------|-------------|
 | 🖥️ [openclaw-mission-control](https://github.com/Zandereins/openclaw-mission-control) | Operations dashboard for AI agent infrastructure — Kanban, live status, task delegation, monitoring |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 patterns, 133 tests, MIT licensed |
-| 🔨 [skillforge](https://github.com/Zandereins/skillforge) | Autonomous skill improvement engine — 7-dimension scorer, beam search, MinHash/LSH mesh, EMA stopping, episodic memory, doctor command. 62.5 → 98.9 structural points, zero human input (v5.1) |
+| 🔨 [skillforge](https://github.com/Zandereins/skillforge) | Autonomous skill improvement — scores 6 dimensions, applies deterministic patches, stops when ROI drops. 56.9 → 99.9 in 18 iterations, zero human input (v5.1, 99 tests, MIT) |
 
 ## Background
 
