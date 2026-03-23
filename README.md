@@ -14,7 +14,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Zandereins/skillforge"><img src="https://img.shields.io/badge/SkillForge-99.9%2F100_%5BS%5D-brightgreen" alt="SkillForge: 99.9 [S]"></a>
+  <a href="https://github.com/Zandereins/skillforge"><img src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Zandereins/130bb61237b5b9b1536718e6a2296d4a/raw/skillforge-score.json" alt="SkillForge Score"></a>
+  <a href="https://github.com/Zandereins/skillforge/stargazers"><img src="https://img.shields.io/github/stars/Zandereins/skillforge?style=social" alt="SkillForge Stars"></a>
   <a href="https://github.com/Zandereins/openclaw-skill-shieldclaw"><img src="https://img.shields.io/badge/ShieldClaw-71_Patterns-DC2626" alt="ShieldClaw"></a>
   <a href="https://linkedin.com/in/franz-paul-016938258/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 </p>
@@ -36,7 +37,7 @@
 - 🖥️ **Mission-Control** — Operations dashboard that gives full visibility into agent state, task pipelines, server health, and deployment status — one tab instead of five terminals
 - 🛡️ **ShieldClaw** — Open-source prompt injection defense (71 patterns, 4 active hooks, zero token overhead) that protects AI agents from adversarial inputs in production
 - 🔧 **OpenClaw Skills** — Reusable agent capabilities for the OpenClaw ecosystem
-- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Stop manually auditing Claude Code skills. SkillForge applies deterministic patches, scores across 6 dimensions, and stops when ROI drops — zero human input. Ships with one-line installer, demo skill, and doctor command for fleet health checks (v5.1, 99.9/100, 99 tests)
+- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Autonomous skill improvement engine for Claude Code. Scores across 7 dimensions, applies deterministic patches, reverts on regression. 13-module scoring package, 165 tests (99 integration + 48 unit + 12 self + 6 proof), dynamic CI badges, zero external Python dependencies (v5.1.1)
 
 ## Engineering Approach
 
@@ -89,7 +90,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 ![ShieldClaw](https://img.shields.io/badge/ShieldClaw-Prompt_Injection_Defense-DC2626?style=flat-square)
 ![QMD-CLI](https://img.shields.io/badge/QMD--CLI-Semantic_Memory_Search-7C3AED?style=flat-square)
-![SkillForge](https://img.shields.io/badge/SkillForge_v5.1-Autonomous_Skill_Engine-F59E0B?style=flat-square)
+![SkillForge](https://img.shields.io/badge/SkillForge_v5.1.1-Autonomous_Skill_Engine-F59E0B?style=flat-square)
 
 </details>
 
@@ -115,6 +116,9 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![pgvector](https://img.shields.io/badge/pgvector-Vector_Search-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-Scripting-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-Testing-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+![ruff](https://img.shields.io/badge/ruff-Linter-D7FF64?style=flat-square&logo=ruff&logoColor=black)
 
 ### Dev Environment
 ![Ghostty](https://img.shields.io/badge/Ghostty-Terminal-1C1E26?style=flat-square&logo=ghostty&logoColor=white)
@@ -136,6 +140,10 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 ![Microsoft 365](https://img.shields.io/badge/Microsoft_365-Consulting-D83B01?style=flat-square&logo=microsoft&logoColor=white)
 ![n8n](https://img.shields.io/badge/n8n-Workflow_Automation-EA4B71?style=flat-square&logo=n8n&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-Scraping-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![asciinema](https://img.shields.io/badge/asciinema-Terminal_Recording-D40000?style=flat-square&logo=asciinema&logoColor=white)
+![Make](https://img.shields.io/badge/Make-Build_Automation-6D00CC?style=flat-square&logo=gnu&logoColor=white)
+![shields.io](https://img.shields.io/badge/shields.io-Dynamic_Badges-000000?style=flat-square&logo=shieldsdotio&logoColor=white)
+![jq](https://img.shields.io/badge/jq-JSON_Processing-C2A000?style=flat-square)
 
 ## Featured Repos
 
@@ -143,7 +151,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 |------|-------------|
 | 🖥️ [openclaw-mission-control](https://github.com/Zandereins/openclaw-mission-control) | Operations dashboard for AI agent infrastructure — Kanban, live status, task delegation, monitoring |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 patterns, 133 tests, MIT licensed |
-| 🔨 [skillforge](https://github.com/Zandereins/skillforge) | Autonomous skill improvement — scores 6 dimensions, applies deterministic patches, stops when ROI drops. 56.9 → 99.9 in 18 iterations, zero human input (v5.1, 99 tests, MIT) |
+| 🔨 [skillforge](https://github.com/Zandereins/skillforge) | Autonomous skill improvement — scores 7 dimensions, applies deterministic patches, reverts on regression. 56.9 → 99.9 in 18 iterations, zero human input. 13-module scoring package, 165 tests, dynamic CI badges (v5.1.1, MIT) |
 
 ## Background
 
