@@ -37,7 +37,7 @@
 - 🖥️ **Mission-Control** — Operations dashboard that gives full visibility into agent state, task pipelines, server health, and deployment status — one tab instead of five terminals
 - 🛡️ **ShieldClaw** — Open-source prompt injection defense (71 patterns, 4 active hooks, zero token overhead) that protects AI agents from adversarial inputs in production
 - 🔧 **OpenClaw Skills** — Reusable agent capabilities for the OpenClaw ecosystem
-- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Autonomous skill improvement engine for Claude Code — the [Karpathy autoresearch loop](https://github.com/karpathy/autoresearch) for skills. 7-dimension scoring, deterministic patches (60-70% rule-based), cross-session episodic memory, fleet-wide health scanning. 119 unit tests, 40 security fixes, continuous density scoring, verb+object contradiction detection. Zero external Python dependencies (v5.2.0)
+- 🔨 **[SkillForge](https://github.com/Zandereins/skillforge)** — Autonomous skill improvement engine for Claude Code — the [Karpathy autoresearch loop](https://github.com/karpathy/autoresearch) for skills. 7-dimension scoring, deterministic patches (60-70% rule-based), cross-session episodic memory, fleet-wide health scanning. 120 unit tests, 40 security fixes, context-aware contradiction detection, anti-gaming scoring. Zero external Python dependencies (v5.3.0)
 
 ## Engineering Approach
 
@@ -90,7 +90,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 ![ShieldClaw](https://img.shields.io/badge/ShieldClaw-Prompt_Injection_Defense-DC2626?style=flat-square)
 ![QMD-CLI](https://img.shields.io/badge/QMD--CLI-Semantic_Memory_Search-7C3AED?style=flat-square)
-![SkillForge](https://img.shields.io/badge/SkillForge_v5.2.0-Autonomous_Skill_Engine-F59E0B?style=flat-square)
+![SkillForge](https://img.shields.io/badge/SkillForge_v5.3.0-Autonomous_Skill_Engine-F59E0B?style=flat-square)
 
 </details>
 
@@ -151,7 +151,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 |------|-------------|
 | 🖥️ [openclaw-mission-control](https://github.com/Zandereins/openclaw-mission-control) | Operations dashboard for AI agent infrastructure — Kanban, live status, task delegation, monitoring |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 patterns, 133 tests, MIT licensed |
-| 🔨 [skillforge](https://github.com/Zandereins/skillforge) | Autonomous skill improvement — Karpathy-style autoresearch for Claude Code skills. 7-dimension scoring, deterministic patches, cross-session memory. 56.9 → 99.9 in 18 iterations, zero human input. 119 unit tests, 40 security fixes, dynamic CI badges (v5.2.0, MIT) |
+| 🔨 [skillforge](https://github.com/Zandereins/skillforge) | Autonomous skill improvement — Karpathy-style autoresearch for Claude Code skills. 7-dimension scoring, deterministic patches, cross-session memory. 56.9 → 99.9 in 18 iterations, zero human input. 120 unit tests, 40 security fixes, context-aware contradictions (v5.3.0, MIT) |
 
 ## Background
 
