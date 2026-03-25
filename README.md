@@ -151,7 +151,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 |------|-------------|
 | 🖥️ [openclaw-mission-control](https://github.com/Zandereins/openclaw-mission-control) | Operations dashboard for AI agent infrastructure — Kanban, live status, task delegation, monitoring |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 patterns, 133 tests, MIT licensed |
-| 🔨 [schliff](https://github.com/Zandereins/schliff) | The finishing cut for Claude Code skills — autonomous improvement via Karpathy-style autoresearch. 7-dimension scoring, deterministic patches, cross-session memory. 56.9 → 99.9 in 18 iterations, zero human input. 120 unit tests, 40 security fixes (v6.0.0, MIT) |
+| 🔨 [schliff](https://github.com/Zandereins/schliff) | The finishing cut for Claude Code skills — autonomous improvement via Karpathy-style autoresearch. 7-dimension scoring, deterministic patches, cross-session memory. 56.9 → 99.9 in 18 iterations, zero human input. 120 unit tests, 40 security fixes (v6.1.0, MIT) |
 
 ## Background
 
