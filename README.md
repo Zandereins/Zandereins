@@ -18,6 +18,7 @@
   <a href="https://github.com/Zandereins/schliff"><img src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Zandereins/130bb61237b5b9b1536718e6a2296d4a/raw/schliff-score.json" alt="Schliff Score"></a>
   <a href="https://pypi.org/project/schliff/"><img src="https://img.shields.io/pypi/v/schliff?style=social&label=PyPI" alt="PyPI"></a>
   <a href="https://github.com/Zandereins/openclaw-skill-shieldclaw"><img src="https://img.shields.io/badge/ShieldClaw-71_Patterns-DC2626" alt="ShieldClaw"></a>
+  <a href="https://fpaul.dev"><img src="https://img.shields.io/badge/fpaul.dev-Website-000000?logo=vercel&logoColor=white" alt="Website"></a>
   <a href="https://linkedin.com/in/franz-paul-016938258/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 </p>
 
@@ -38,7 +39,7 @@
 - 🖥️ **Mission-Control** — Single dashboard for agent state, task queues, server health, and deployments — one tab instead of five terminals
 - 🛡️ **ShieldClaw** — Open-source prompt injection defense — 71 patterns, 4 active hooks, zero token overhead. Protects agents from adversarial inputs in production (MIT)
 - 🔧 **OpenClaw Skills** — Composable agent capabilities for the OpenClaw ecosystem — including ShieldClaw (71 patterns, MIT)
-- 🔨 **[Schliff](https://github.com/Zandereins/schliff)** — Deterministic quality scorer for AI agent instruction files — scores SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md across 8 dimensions including security. Multi-format, anti-gaming detection, zero dependencies. 592 tests (v7.0.0, MIT, [PyPI](https://pypi.org/project/schliff/))
+- 🔨 **[Schliff](https://github.com/Zandereins/schliff)** — Deterministic quality scorer for AI agent instruction files — scores SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md across 8 dimensions including security. Multi-format, anti-gaming detection, zero dependencies. 831 tests (v7.1.0, MIT, [PyPI](https://pypi.org/project/schliff/))
 
 ## Dev Environment
 
@@ -80,7 +81,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 ![ShieldClaw](https://img.shields.io/badge/ShieldClaw-Prompt_Injection_Defense-7C3AED?style=flat-square)
 ![QMD-CLI](https://img.shields.io/badge/QMD--CLI-Semantic_Memory_Search-7C3AED?style=flat-square)
-![Schliff](https://img.shields.io/badge/Schliff_v7.0.0-Multi--Format_Scorer-7C3AED?style=flat-square)
+![Schliff](https://img.shields.io/badge/Schliff_v7.1.0-Multi--Format_Scorer-7C3AED?style=flat-square)
 
 </details>
 
@@ -131,8 +132,8 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 | Repo | Description |
 |------|-------------|
-| 🔨 [schliff](https://github.com/Zandereins/schliff) | Deterministic quality scorer for AI agent instruction files — multi-format (SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md), 8-dimension scoring with security, compare, suggest, anti-gaming. 592 tests, self-score 99.0 [S] (v7.0.0, MIT) |
-| 🖥️ [openclaw-mission-control](https://github.com/Zandereins/openclaw-mission-control) | Unified operations dashboard for AI agent infrastructure — real-time status, task history, server monitoring from one pane |
+| 🔨 [schliff](https://github.com/Zandereins/schliff) | Deterministic quality scorer for AI agent instruction files — multi-format (SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md), 8-dimension scoring with security, compare, suggest, anti-gaming. 831 tests, self-score 99.0 [S] (v7.1.0, MIT) |
+| 🌐 [fpaul.dev](https://fpaul.dev) | Personal developer website — Next.js 16, MDX blog, ASCII art animations, light/dark theming, Clawd mascot. Static export on Vercel |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 adversarial patterns, zero token overhead, 133 tests, MIT licensed |
 
 💬 **Interested in working together?** [Let's connect on LinkedIn](https://www.linkedin.com/in/franz-paul-016938258/)
@@ -149,4 +150,4 @@ Today I build agents that run unattended in production, not demos that break aft
 
 **Available for freelance and consulting projects** in AI agent development, fullstack web applications, NLP/ML systems, and automation.
 
-🔗 [LinkedIn](https://www.linkedin.com/in/franz-paul-016938258/)
+🔗 [fpaul.dev](https://fpaul.dev) · [LinkedIn](https://www.linkedin.com/in/franz-paul-016938258/)
