@@ -17,6 +17,7 @@
   <a href="https://github.com/Zandereins/schliff/stargazers"><img src="https://img.shields.io/github/stars/Zandereins/schliff?style=social" alt="Schliff Stars"></a>
   <a href="https://github.com/Zandereins/schliff"><img src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Zandereins/130bb61237b5b9b1536718e6a2296d4a/raw/schliff-score.json" alt="Schliff Score"></a>
   <a href="https://pypi.org/project/schliff/"><img src="https://img.shields.io/pypi/v/schliff?style=social&label=PyPI" alt="PyPI"></a>
+  <a href="https://github.com/Zandereins/hydra"><img src="https://img.shields.io/badge/Hydra-Cross--Model_Review-16A34A" alt="Hydra"></a>
   <a href="https://github.com/Zandereins/openclaw-skill-shieldclaw"><img src="https://img.shields.io/badge/ShieldClaw-71_Patterns-DC2626" alt="ShieldClaw"></a>
   <a href="https://fpaul.dev"><img src="https://img.shields.io/badge/fpaul.dev-Website-000000?logo=vercel&logoColor=white" alt="Website"></a>
   <a href="https://linkedin.com/in/franz-paul-016938258/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
@@ -79,6 +80,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 **Custom Skills**
 
+![Hydra](https://img.shields.io/badge/Hydra-Cross--Model_Code_Review-7C3AED?style=flat-square)
 ![ShieldClaw](https://img.shields.io/badge/ShieldClaw-Prompt_Injection_Defense-7C3AED?style=flat-square)
 ![QMD-CLI](https://img.shields.io/badge/QMD--CLI-Semantic_Memory_Search-7C3AED?style=flat-square)
 ![Schliff](https://img.shields.io/badge/Schliff_v7.1.0-Multi--Format_Scorer-7C3AED?style=flat-square)
@@ -132,6 +134,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 | Repo | Description |
 |------|-------------|
+| 🐍 [hydra](https://github.com/Zandereins/hydra) | Multi-headed cross-model code review — 6 AI advisors (Opus + Codex), 5 peer reviewers, chairman synthesis. Based on Karpathy's LLM Council. Claude Code skill (MIT) |
 | 🔨 [schliff](https://github.com/Zandereins/schliff) | Deterministic quality scorer for AI agent instruction files — multi-format (SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md), 8-dimension scoring with security, compare, suggest, anti-gaming. 831 tests, self-score 99.0 [S] (v7.1.0, MIT) |
 | 🌐 [fpaul.dev](https://fpaul.dev) | Personal developer website — Next.js 16, MDX blog, ASCII art animations, light/dark theming, Clawd mascot. Static export on Vercel |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 adversarial patterns, zero token overhead, 133 tests, MIT licensed |
