@@ -42,6 +42,10 @@
 - 🔧 **OpenClaw Skills** — Composable agent capabilities for the OpenClaw ecosystem — including ShieldClaw (71 patterns, MIT)
 - 🔨 **[Schliff](https://github.com/Zandereins/schliff)** — Deterministic quality scorer for AI agent instruction files — scores SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md across 8 dimensions including security. Multi-format, anti-gaming detection, zero dependencies. 831 tests (v7.1.0, MIT, [PyPI](https://pypi.org/project/schliff/))
 
+## Open Source Contributions
+
+- **[modelcontextprotocol/servers#3733](https://github.com/modelcontextprotocol/servers/pull/3733)** — Added a root `CLAUDE.md` for Anthropic's official MCP reference monorepo (7 servers across TypeScript and Python). Merged April 2026 by [@cliffhall](https://github.com/cliffhall). Self-audit with schliff returned 59.2/100 at 40% coverage — [full walkthrough →](https://fpaul.dev/writing/scoring-my-own-mcp-contribution/)
+
 ## Dev Environment
 
 | Tool | Role |
@@ -134,7 +138,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 
 | Repo | Description |
 |------|-------------|
-| 🐍 [hydra](https://github.com/Zandereins/hydra) | Multi-headed cross-model code review — 6 AI advisors (Opus + Codex), 5 peer reviewers, chairman synthesis. Based on Karpathy's LLM Council. Claude Code skill (MIT) |
+| 🐍 [hydra](https://github.com/Zandereins/hydra) | Multi-headed cross-model code review — 6 AI advisors (Opus + Codex), 3 peer reviewers, chairman synthesis. Up to 10 agents in deep mode. Based on Karpathy's LLM Council. Claude Code skill (MIT) |
 | 🔨 [schliff](https://github.com/Zandereins/schliff) | Deterministic quality scorer for AI agent instruction files — multi-format (SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md), 8-dimension scoring with security, compare, suggest, anti-gaming. 831 tests, self-score 99.0 [S] (v7.1.0, MIT) |
 | 🌐 [fpaul.dev](https://fpaul.dev) | Personal developer website — Next.js 16, MDX blog, ASCII art animations, light/dark theming, Clawd mascot. Static export on Vercel |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 adversarial patterns, zero token overhead, 133 tests, MIT licensed |
