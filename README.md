@@ -40,7 +40,7 @@
 - 🖥️ **Mission-Control** — Single dashboard for agent state, task queues, server health, and deployments — one tab instead of five terminals
 - 🛡️ **ShieldClaw** — Open-source prompt injection defense — 71 patterns, 4 active hooks, zero token overhead. Protects agents from adversarial inputs in production (MIT)
 - 🔧 **OpenClaw Skills** — Composable agent capabilities for the OpenClaw ecosystem — including ShieldClaw (71 patterns, MIT)
-- 🔨 **[Schliff](https://github.com/Zandereins/schliff)** — Deterministic quality scorer for AI agent instruction files — scores SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md across 8 dimensions including security. Multi-format, anti-gaming detection, zero dependencies. 831 tests (v7.1.0, MIT, [PyPI](https://pypi.org/project/schliff/))
+- 🔨 **[Schliff](https://github.com/Zandereins/schliff)** — Deterministic quality scorer for AI agent instruction files — scores SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md across 8 dimensions including security. Multi-format, anti-gaming detection, zero dependencies. 1017 tests (v7.1.1, MIT, [PyPI](https://pypi.org/project/schliff/))
 
 ## Open Source Contributions
 
@@ -87,7 +87,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 ![Hydra](https://img.shields.io/badge/Hydra-Cross--Model_Code_Review-7C3AED?style=flat-square)
 ![ShieldClaw](https://img.shields.io/badge/ShieldClaw-Prompt_Injection_Defense-7C3AED?style=flat-square)
 ![QMD-CLI](https://img.shields.io/badge/QMD--CLI-Semantic_Memory_Search-7C3AED?style=flat-square)
-![Schliff](https://img.shields.io/badge/Schliff_v7.1.0-Multi--Format_Scorer-7C3AED?style=flat-square)
+![Schliff](https://img.shields.io/badge/Schliff_v7.1.1-Multi--Format_Scorer-7C3AED?style=flat-square)
 
 </details>
 
@@ -139,7 +139,7 @@ My agentic development workflow runs on Claude Code with a curated set of plugin
 | Repo | Description |
 |------|-------------|
 | 🐍 [hydra](https://github.com/Zandereins/hydra) | Multi-headed cross-model code review — 6 AI advisors (Opus + Codex), 3 peer reviewers, chairman synthesis. Up to 10 agents in deep mode. Based on Karpathy's LLM Council. Claude Code skill (MIT) |
-| 🔨 [schliff](https://github.com/Zandereins/schliff) | Deterministic quality scorer for AI agent instruction files — multi-format (SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md), 8-dimension scoring with security, compare, suggest, anti-gaming. 831 tests, self-score 99.0 [S] (v7.1.0, MIT) |
+| 🔨 [schliff](https://github.com/Zandereins/schliff) | Deterministic quality scorer for AI agent instruction files — multi-format (SKILL.md, CLAUDE.md, .cursorrules, AGENTS.md), 8-dimension scoring with security, compare, suggest, anti-gaming. 1017 tests, self-score 99.0 [S] (v7.1.1, MIT) |
 | 🌐 [fpaul.dev](https://fpaul.dev) | Personal developer website — Next.js 16, MDX blog, ASCII art animations, light/dark theming, Clawd mascot. Static export on Vercel |
 | 🛡️ [openclaw-skill-shieldclaw](https://github.com/Zandereins/openclaw-skill-shieldclaw) | Prompt injection defense for AI agents — 71 adversarial patterns, zero token overhead, 133 tests, MIT licensed |
 
