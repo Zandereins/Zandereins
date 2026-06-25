@@ -1,0 +1,40 @@
+name: Star Count
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: star-count
+  cancel-in-progress: false
+
+jobs:
+  total-stars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compute total stars across public repos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          total=$(gh api --paginate 'users/Zandereins/repos?per_page=100&type=owner' \
+            --jq '[.[] | select(.fork == false and .private == false) | .stargazers_count] | add // 0')
+          echo "Total public stars: $total"
+          printf '{"schemaVersion":1,"label":"total stars","message":"%s","color":"blue"}\n' "$total" > stars.json
+
+      - name: Commit if the count changed
+        run: |
+          if git diff --quiet -- stars.json; then
+            echo "No change — star count is still current."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add stars.json
+            git commit -m "chore: update total star count [skip ci]"
+            git push
+          fi
