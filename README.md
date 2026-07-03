@@ -34,7 +34,7 @@ Two shipped, public tools do the heavy lifting; the rest are private systems tha
 
 | Repo | What it does | Signal |
 | --- | --- | --- |
-| **[schliff](https://github.com/Zandereins/schliff)** | Deterministic, stdlib-only quality scorer for AI agent instruction files — `SKILL.md`, `CLAUDE.md`, `.cursorrules`, `AGENTS.md`, system prompts | 8 scorers (7 in the composite) · anti-gaming detection · deterministic patches · 1,288 tests · MIT · on PyPI |
+| **[schliff](https://github.com/Zandereins/schliff)** | Deterministic, stdlib-only quality scorer for AI agent instruction files — `SKILL.md`, `CLAUDE.md`, `.cursorrules`, `AGENTS.md`, system prompts | 9 scorers · anti-gaming detection · deterministic patches · 1,347 tests · MIT · on PyPI |
 | **[hydra](https://github.com/Zandereins/hydra)** | Multi-perspective review council for Claude Code: advisors analyze, reviewers cross-examine, a chairman synthesizes | 4 advisors (6 in deep mode) · 3 cross-examining reviewers · up to 10 agents · Claude Opus + OpenAI Codex · MIT |
 | **vault-sync** *(private)* | Syncs GitHub repos + PyPI metadata into an Obsidian vault as a Context Mirror | CLI + macOS menubar widget (Molty mascot) + Claude Code MCP plugin (4 read-only MCP tools, 4 skills, 2 hooks) · Python ≥3.10 · MIT |
 | **project-beat** *(private)* | FastAPI + Next.js 16 freelance-job radar across German boards | Scrapes 4 active boards five times daily · 6-component hybrid matching · Supabase dashboard |
