@@ -1,5 +1,9 @@
 <div align="center">
-  <img src="dev-mascots.svg" alt="Franz Paul — developer mascots" width="420" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="header-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="header-light.svg">
+    <img src="header-dark.svg" alt="Claude Code orchestrating five subagents — explore, plan, code, test, review" width="880" />
+  </picture>
 
 # Franz Paul
 
