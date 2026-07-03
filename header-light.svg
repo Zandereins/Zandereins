@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="880" height="360" role="img" aria-label="Claude Code orchestrating five subagents: explore, plan, code, test, review">
+  <style>
+    :root {
+      --fg: #1F2328;
+      --muted: #57606A;
+    }
+    .mono { font-family: ui-monospace, 'SF Mono', 'Cascadia Code', 'Fira Code', Menlo, Consolas, monospace; }
+
+    /* main Clawd hop — anticipation, stretch, apex, squash, settle */
+    @keyframes hop {
+      0%   { transform: translateY(0) scale(1, 1); }
+      10%  { transform: translateY(0) scale(1.08, 0.88); }
+      24%  { transform: translateY(-32px) scale(0.96, 1.08); }
+      38%  { transform: translateY(-42px) scale(1, 1.02); }
+      54%  { transform: translateY(-8px) scale(0.98, 1.04); }
+      62%  { transform: translateY(0) scale(1.1, 0.86); }
+      74%  { transform: translateY(0) scale(0.97, 1.05); }
+      86%  { transform: translateY(0) scale(1.02, 0.99); }
+      100% { transform: translateY(0) scale(1, 1); }
+    }
+    .clawd-main {
+      animation: hop 1.6s ease-in-out infinite;
+      transform-origin: 440px 178px;
+    }
+
+    @keyframes shadow-main {
+      0%, 10%, 62%, 100% { transform: scaleX(1); opacity: 0.18; }
+      38% { transform: scaleX(0.55); opacity: 0.06; }
+    }
+    .shadow-main {
+      animation: shadow-main 1.6s ease-in-out infinite;
+      transform-origin: 440px 182px;
+    }
+
+    /* eye blink every few seconds */
+    @keyframes blink {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95%, 97% { transform: scaleY(0.08); }
+    }
+    .eye {
+      animation: blink 4.4s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    /* subagent hop — gentler, staggered wave */
+    @keyframes hop-sub {
+      0%, 55%, 100% { transform: translateY(0) scale(1, 1); }
+      12% { transform: translateY(0) scale(1.08, 0.9); }
+      30% { transform: translateY(-11px) scale(0.97, 1.06); }
+      44% { transform: translateY(0) scale(1.08, 0.9); }
+    }
+    @keyframes shadow-sub {
+      0%, 55%, 100% { transform: scaleX(1); opacity: 0.18; }
+      30% { transform: scaleX(0.6); opacity: 0.06; }
+    }
+    .sub-0 { animation: hop-sub 1.6s ease-in-out 0.5s infinite; transform-origin: 152px 292px; }
+    .sub-shadow-0 { animation: shadow-sub 1.6s ease-in-out 0.5s infinite; transform-origin: 152px 296px; }
+    .sub-1 { animation: hop-sub 1.6s ease-in-out 0.64s infinite; transform-origin: 296px 292px; }
+    .sub-shadow-1 { animation: shadow-sub 1.6s ease-in-out 0.64s infinite; transform-origin: 296px 296px; }
+    .sub-2 { animation: hop-sub 1.6s ease-in-out 0.78s infinite; transform-origin: 440px 292px; }
+    .sub-shadow-2 { animation: shadow-sub 1.6s ease-in-out 0.78s infinite; transform-origin: 440px 296px; }
+    .sub-3 { animation: hop-sub 1.6s ease-in-out 0.92s infinite; transform-origin: 584px 292px; }
+    .sub-shadow-3 { animation: shadow-sub 1.6s ease-in-out 0.92s infinite; transform-origin: 584px 296px; }
+    .sub-4 { animation: hop-sub 1.6s ease-in-out 1.06s infinite; transform-origin: 728px 292px; }
+    .sub-shadow-4 { animation: shadow-sub 1.6s ease-in-out 1.06s infinite; transform-origin: 728px 296px; }
+
+    /* connector dash flow */
+    @keyframes dash {
+      to { stroke-dashoffset: -16; }
+    }
+    .connector {
+      fill: none;
+      stroke: #0969DA;
+      stroke-width: 1.3;
+      stroke-linecap: round;
+      stroke-dasharray: 2 6;
+      opacity: 0.45;
+      animation: dash 1.1s linear infinite;
+    }
+
+    /* status dot pulse */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 1; }
+    }
+    .dot { fill: #1A7F37; animation: pulse 2s ease-in-out infinite; }
+
+    /* prompt: typing reveal + blinking cursor */
+    @keyframes type {
+      to { transform: scaleX(0); }
+    }
+    .type-cover {
+      fill: #F6F8FA;
+      transform-origin: 316px 0;
+      animation: type 1.9s steps(32, end) 0.5s forwards;
+    }
+    @keyframes cursor {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .cursor { fill: #D97757; animation: cursor 1.1s steps(1) infinite; }
+
+    .label { font-size: 11px; fill: #1A7F37; opacity: 0.9; }
+    .title { font-size: 11px; fill: #57606A; }
+    .prompt-sym { font-size: 13px; fill: #D97757; font-weight: 600; }
+    .prompt-txt { font-size: 13px; fill: #1F2328; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+      .type-cover, .packet { display: none; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="clawd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F0A47E"/>
+      <stop offset="1" stop-color="#D97757"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#D97757" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#D97757" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1" fill="rgba(0,0,0,0.06)"/>
+    </pattern>
+    <clipPath id="card-clip">
+      <rect x="1.5" y="1.5" width="877" height="357" rx="14"/>
+    </clipPath>
+    <path id="c1" d="M440,198 Q290,216 152,246"/>
+    <path id="c2" d="M440,198 Q366,222 296,246"/>
+    <path id="c3" d="M440,198 L440,246"/>
+    <path id="c4" d="M440,198 Q514,222 584,246"/>
+    <path id="c5" d="M440,198 Q590,216 728,246"/>
+  </defs>
+
+  <!-- card -->
+  <rect x="1.5" y="1.5" width="877" height="357" rx="14" fill="#F6F8FA" stroke="#D0D7DE" stroke-width="1.5"/>
+  <g clip-path="url(#card-clip)">
+    <rect x="1.5" y="37" width="877" height="322" fill="url(#grid)"/>
+    <ellipse cx="440" cy="150" rx="220" ry="120" fill="url(#glow)"/>
+  </g>
+
+  <!-- title bar -->
+  <line x1="1.5" y1="37" x2="878.5" y2="37" stroke="#D0D7DE" stroke-width="1"/>
+  <circle cx="24" cy="19" r="5.5" fill="#FF5F57"/>
+  <circle cx="44" cy="19" r="5.5" fill="#FEBC2E"/>
+  <circle cx="64" cy="19" r="5.5" fill="#28C840"/>
+  <text x="440" y="23" text-anchor="middle" class="mono title">franz@dresden — claude code</text>
+
+  <!-- prompt line -->
+  <text x="30" y="66" class="mono prompt-sym">&#10095;</text>
+  <text x="46" y="66" class="mono prompt-txt" textLength="270">claude "measure first, then fix"</text>
+  <rect class="type-cover" x="44" y="52" width="276" height="19"/>
+  <rect class="cursor" x="322" y="53" width="8" height="16" rx="1.5"/>
+
+  <!-- connectors + packets -->
+  <use href="#c1" class="connector"/>
+  <use href="#c2" class="connector" style="animation-delay:-0.2s"/>
+  <use href="#c3" class="connector" style="animation-delay:-0.4s"/>
+  <use href="#c4" class="connector" style="animation-delay:-0.6s"/>
+  <use href="#c5" class="connector" style="animation-delay:-0.8s"/>
+    <circle class="packet" r="2.6" fill="#0969DA" opacity="0.9">
+    <animateMotion dur="2.4s" begin="0.0s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+      <mpath href="#c1"/>
+    </animateMotion>
+  </circle>
+  <circle class="packet" r="2.6" fill="#0969DA" opacity="0.9">
+    <animateMotion dur="2.4s" begin="-0.45s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+      <mpath href="#c2"/>
+    </animateMotion>
+  </circle>
+  <circle class="packet" r="2.6" fill="#0969DA" opacity="0.9">
+    <animateMotion dur="2.4s" begin="-0.9s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+      <mpath href="#c3"/>
+    </animateMotion>
+  </circle>
+  <circle class="packet" r="2.6" fill="#0969DA" opacity="0.9">
+    <animateMotion dur="2.4s" begin="-1.35s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+      <mpath href="#c4"/>
+    </animateMotion>
+  </circle>
+  <circle class="packet" r="2.6" fill="#0969DA" opacity="0.9">
+    <animateMotion dur="2.4s" begin="-1.8s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+      <mpath href="#c5"/>
+    </animateMotion>
+  </circle>
+
+  <!-- main Clawd -->
+  <ellipse class="shadow-main" cx="440" cy="182" rx="34" ry="5" fill="#000"/>
+  <g class="clawd-main">
+    <rect x="404" y="170" width="18" height="12" rx="5" fill="#D97757"/>
+    <rect x="458" y="170" width="18" height="12" rx="5" fill="#D97757"/>
+    <rect x="396" y="102" width="88" height="72" rx="20" fill="url(#clawd)"/>
+    <ellipse cx="420" cy="116" rx="16" ry="8" fill="#FFFFFF" opacity="0.14"/>
+    <rect class="eye" x="419" y="124" width="11" height="22" rx="5.5" fill="#24292F"/>
+    <rect class="eye" x="450" y="124" width="11" height="22" rx="5.5" fill="#24292F"/>
+  </g>
+
+  <!-- subagents -->
+    <ellipse class="sub-shadow-0" cx="152" cy="296" rx="17" ry="3" fill="#000"/>
+  <g class="sub-0">
+    <rect x="135" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="159" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="131" y="250" width="42" height="36" rx="11" fill="url(#clawd)"/>
+    <rect class="eye" x="142" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <rect class="eye" x="156" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <circle class="dot" cx="177" cy="252" r="3" style="animation-delay:0.0s"/>
+  </g>
+  <text x="152" y="318" text-anchor="middle" class="mono label">explore</text>
+  <ellipse class="sub-shadow-1" cx="296" cy="296" rx="17" ry="3" fill="#000"/>
+  <g class="sub-1">
+    <rect x="279" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="303" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="275" y="250" width="42" height="36" rx="11" fill="url(#clawd)"/>
+    <rect class="eye" x="286" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <rect class="eye" x="300" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <circle class="dot" cx="321" cy="252" r="3" style="animation-delay:0.35s"/>
+  </g>
+  <text x="296" y="318" text-anchor="middle" class="mono label">plan</text>
+  <ellipse class="sub-shadow-2" cx="440" cy="296" rx="17" ry="3" fill="#000"/>
+  <g class="sub-2">
+    <rect x="423" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="447" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="419" y="250" width="42" height="36" rx="11" fill="url(#clawd)"/>
+    <rect class="eye" x="430" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <rect class="eye" x="444" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <circle class="dot" cx="465" cy="252" r="3" style="animation-delay:0.7s"/>
+  </g>
+  <text x="440" y="318" text-anchor="middle" class="mono label">code</text>
+  <ellipse class="sub-shadow-3" cx="584" cy="296" rx="17" ry="3" fill="#000"/>
+  <g class="sub-3">
+    <rect x="567" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="591" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="563" y="250" width="42" height="36" rx="11" fill="url(#clawd)"/>
+    <rect class="eye" x="574" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <rect class="eye" x="588" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <circle class="dot" cx="609" cy="252" r="3" style="animation-delay:1.0499999999999998s"/>
+  </g>
+  <text x="584" y="318" text-anchor="middle" class="mono label">test</text>
+  <ellipse class="sub-shadow-4" cx="728" cy="296" rx="17" ry="3" fill="#000"/>
+  <g class="sub-4">
+    <rect x="711" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="735" y="284" width="10" height="8" rx="3.5" fill="#D97757"/>
+    <rect x="707" y="250" width="42" height="36" rx="11" fill="url(#clawd)"/>
+    <rect class="eye" x="718" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <rect class="eye" x="732" y="261" width="6" height="12" rx="3" fill="#24292F"/>
+    <circle class="dot" cx="753" cy="252" r="3" style="animation-delay:1.4s"/>
+  </g>
+  <text x="728" y="318" text-anchor="middle" class="mono label">review</text>
+</svg>
