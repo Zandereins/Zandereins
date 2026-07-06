@@ -24,8 +24,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          total=$(gh api --paginate --slurp 'users/Zandereins/repos?per_page=100&type=owner' \
-            --jq '[.[][] | select(.fork == false and .private == false) | .stargazers_count] | add // 0')
+          set -euo pipefail
+          # gh api --slurp cannot be combined with --jq, so sum the
+          # concatenated page arrays with a standalone jq -s instead.
+          total=$(gh api --paginate 'users/Zandereins/repos?per_page=100&type=owner' \
+            | jq -s '[.[][] | select(.fork == false and .private == false) | .stargazers_count] | add // 0')
+          if ! [[ "$total" =~ ^[0-9]+$ ]]; then
+            echo "Unexpected total: '$total' — refusing to write stars.json" >&2
+            exit 1
+          fi
           echo "Total public stars: $total"
           printf '{"schemaVersion":1,"label":"total stars","message":"%s","color":"blue"}\n' "$total" > stars.json
 
