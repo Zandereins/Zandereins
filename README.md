@@ -11,6 +11,7 @@
 
 I build deterministic tooling that makes AI agents measurable — quality you can defend with numbers, not vibes. **Available for freelance.**
 
+[![Claude Code Partner — verified on Credly](https://img.shields.io/badge/Claude_Code_Partner-verified-D97757?logo=claude&logoColor=white)](https://www.credly.com/badges/416576f5-946a-4381-b773-0916075f2200/public_url)
 [![Total stars](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Zandereins/Zandereins/main/stars.json&logo=github&color=blue)](https://github.com/Zandereins?tab=repositories)
 [![schliff score](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/Zandereins/130bb61237b5b9b1536718e6a2296d4a/raw/schliff-score.json)](https://github.com/Zandereins/schliff)
 [![schliff on PyPI](https://img.shields.io/pypi/v/schliff?label=PyPI)](https://pypi.org/project/schliff/)
