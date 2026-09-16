@@ -19,7 +19,7 @@ I build deterministic tooling that makes AI agents measurable — quality you ca
 [![fpaul.dev](https://img.shields.io/badge/fpaul.dev-portfolio-black)](https://fpaul.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-connect-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/franz-paul-016938258/)
 
-[Featured](#featured) · [Open source](#open-source) · [Work with me](#work-with-me)
+[Featured](#featured) · [Upstream](#upstream) · [Work with me](#work-with-me)
 
 </div>
 
@@ -50,15 +50,16 @@ Two shipped, public tools do the heavy lifting; the rest are private systems tha
 
 Deterministic, well-tested tooling for the agentic-coding ecosystem: things that **score and review AI agents** instead of just calling them. The throughline is **measure first, then fix** — anti-gaming detection so a score can't be juiced, deterministic patches that apply ~32% of schliff's fixes mechanically, and spec-first discipline where every claim is checked against the real artifact. Stdlib-first Python, TypeScript where the runtime demands it.
 
-## Open source
+## Upstream
 
-A clean merged PR is the receipt I trust most — third-party-validated proof a maintainer accepted the work.
+Work a third party accepted is the only receipt I trust — a merged PR, or an advisory a maintainer published with my name on it.
 
 | Project | Contribution | Status |
 | --- | --- | --- |
+| **[axios/axios](https://github.com/axios/axios/security/advisories/GHSA-mghh-pgcx-3jjj)** | Reported a quadratic-backtracking ReDoS in `shouldBypassProxy()` host normalization, reachable through an attacker-controlled redirect `Location` — with cost measured across input sizes, a three-line fix, and byte-identical output verified on every match path | Advisory [GHSA-mghh-pgcx-3jjj](https://github.com/axios/axios/security/advisories/GHSA-mghh-pgcx-3jjj) · High, CVSS 4.0 8.2 (availability) · reporter credit accepted · fixed in axios 1.20.0 · September 2026 |
 | **[modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers/pull/3733)** | Added a root `CLAUDE.md` covering the full reference-servers monorepo — 7 servers (4 TypeScript, 3 Python) | [PR #3733](https://github.com/modelcontextprotocol/servers/pull/3733), merged by a maintainer, April 2026 |
 
-Same thesis, applied upstream: better context, fewer guesses.
+Same move both times: measure it, then hand the maintainer evidence instead of a claim.
 
 <details>
 <summary><strong>Dev environment & stack</strong></summary>
