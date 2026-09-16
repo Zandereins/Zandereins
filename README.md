@@ -56,7 +56,7 @@ Work a third party accepted is the only receipt I trust — a merged PR, or an a
 
 | Project | Contribution | Status |
 | --- | --- | --- |
-| **[axios/axios](https://github.com/axios/axios/security/advisories/GHSA-mghh-pgcx-3jjj)** | Reported a quadratic-backtracking ReDoS in `shouldBypassProxy()` host normalization, reachable through an attacker-controlled redirect `Location` — with cost measured across input sizes, a three-line fix, and byte-identical output verified on every match path | Advisory [GHSA-mghh-pgcx-3jjj](https://github.com/axios/axios/security/advisories/GHSA-mghh-pgcx-3jjj) · High, CVSS 4.0 8.2 (availability) · reporter credit accepted · fixed in axios 1.20.0 · September 2026 |
+| **[axios/axios](https://github.com/axios/axios/security/advisories/GHSA-mghh-pgcx-3jjj)** | Reported a quadratic-backtracking ReDoS in `shouldBypassProxy()` host normalization, reachable through an attacker-controlled redirect `Location` — with cost measured across input sizes, a suggested three-line fix, and byte-identical output verified on every match path | Advisory [GHSA-mghh-pgcx-3jjj](https://github.com/axios/axios/security/advisories/GHSA-mghh-pgcx-3jjj) · High, CVSS 4.0 8.2 (availability) · reporter credit accepted · fixed in axios 1.20.0 · September 2026 |
 | **[modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers/pull/3733)** | Added a root `CLAUDE.md` covering the full reference-servers monorepo — 7 servers (4 TypeScript, 3 Python) | [PR #3733](https://github.com/modelcontextprotocol/servers/pull/3733), merged by a maintainer, April 2026 |
 
 Same move both times: measure it, then hand the maintainer evidence instead of a claim.
